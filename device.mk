@@ -46,6 +46,7 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # Soong Namespaces
 PRODUCT_SOONG_NAMESPACES += \
+    bootable/deprecated-ota \
     hardware/google/interfaces \
     hardware/google/pixel \
     hardware/qcom-caf/wlan \
