@@ -1,5 +1,33 @@
 # Proprietary files
 
+# Audio
+vendor/etc/LVACFS_Calibration.dat
+vendor/etc/LVACFS_Configuration.txt
+vendor/etc/LVACFS_ControlParams.txt
+vendor/etc/audio_board_info.xml
+vendor/etc/audio_policy_configuration_le_offload_disabled.xml:vendor/etc/audio_policy_configuration.xml;TRYSRCFIRST
+vendor/etc/mixer_gains.xml
+vendor/etc/mixer_paths.xml
+vendor/lib64/hw/audio.primary.s5e9945.so
+vendor/lib64/libSamsungPostProcessConvertor.so
+vendor/lib64/lib_SamsungRec_08020.so
+vendor/lib64/lib_SoundAlive_SRC384_ver320.so
+vendor/lib64/lib_lvacfs.so
+vendor/lib64/lib_soundaliveresampler.so
+vendor/lib64/libalsautils_sec.so
+vendor/lib64/libaudio-ril.so
+vendor/lib64/libaudioparamupdate.so
+vendor/lib64/libaudioproxy2.so
+vendor/lib64/liblastaboxmsg.so
+vendor/lib64/librecordalive.so
+vendor/lib64/libsecaudioinfo.so
+vendor/lib64/libsecaudiolevel.so
+vendor/lib64/libsehbluetooth_audio_session_aidl.so
+vendor/lib64/libspeakercalibration.so
+vendor/lib64/vendor.samsung.hardware.bluetooth.audio-V2-ndk.so
+vendor/lib64/vndk/libaudioroute.so:vendor/lib64/libaudioroute_samsung.so;FIX_SONAME
+vendor/lib64/vndk/libtinyalsa.so:vendor/lib64/libtinyalsa_samsung.so;FIX_SONAME
+
 # Bluetooth
 vendor/bin/hw/android.hardware.bluetooth@1.1-service-qti
 vendor/etc/init/android.hardware.bluetooth@1.1-service-qti.rc
@@ -169,6 +197,10 @@ vendor/etc/ueventd.rc
 
 # Power
 vendor/lib64/libepic_helper.so
+
+# Miscellaneous Dependencies
+vendor/lib64/libfloatingfeature.so
+vendor/lib64/libsecnativefeature.so
 
 # RIL
 vendor/lib64/libsecril-client.so
