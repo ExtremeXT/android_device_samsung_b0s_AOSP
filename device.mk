@@ -83,6 +83,9 @@ PRODUCT_COPY_FILES += \
 # Fastbootd
 PRODUCT_PACKAGES += fastbootd
 
+# Haptics
+PRODUCT_PACKAGES += vibrator.default
+
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health-service.example \

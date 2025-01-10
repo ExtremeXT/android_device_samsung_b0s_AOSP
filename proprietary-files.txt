@@ -190,6 +190,12 @@ vendor/firmware/wlan-connection-roaming-backup.ini
 vendor/firmware/wlan-connection-roaming.ini
 vendor/firmware/wlan/kiwi_v2/qcom_cfg.ini
 
+# Haptics
+vendor/bin/hw/vendor.samsung.hardware.vibrator-service
+vendor/etc/init/vendor.samsung.hardware.vibrator-default.rc
+vendor/etc/vintf/manifest/vendor.samsung.hardware.vibrator-default.xml
+vendor/lib64/vendor.samsung.hardware.vibrator-V5-ndk.so
+
 # Init
 recovery/ramdisk/init.recovery.s5e9945.rc:recovery/root/init.recovery.s5e9945.rc
 vendor/etc/init/init.s5e9945.rc
