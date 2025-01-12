@@ -98,7 +98,8 @@ BOARD_SAMSUNG_DYNAMIC_PARTITIONS_PARTITION_LIST := \
 BOARD_SAMSUNG_DYNAMIC_PARTITIONS_SIZE := $(shell echo $$(( $(BOARD_SUPER_PARTITION_SIZE) - 4 * 1024**2 )))
 
 # Properties
-TARGET_VENDOR_PROP += device/samsung/e1s/configs/vendor.prop
+TARGET_PRODUCT_PROP += device/samsung/e1s/configs/props/product.prop
+TARGET_VENDOR_PROP += device/samsung/e1s/configs/props/vendor.prop
 
 # Ramdisks
 BOARD_RAMDISK_USE_LZ4 := true
