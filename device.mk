@@ -58,6 +58,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.midi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.midi.xml
 
 PRODUCT_PACKAGES += \
+    SamsungDAP \
     android.hardware.audio.effect@7.0-impl \
     android.hardware.audio.service \
     android.hardware.audio@7.1-impl \
