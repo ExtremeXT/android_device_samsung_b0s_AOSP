@@ -29,7 +29,6 @@ vendor/lib64/vndk/libtinyalsa.so:vendor/lib64/libtinyalsa_samsung.so;FIX_SONAME
 
 # Audio - Effects
 vendor/etc/SoundBoosterParam.txt
-vendor/etc/audio_effects_sec.xml;SYMLINK=vendor/etc/audio_effects.xml
 vendor/etc/dolby/dax-default.xml
 vendor/lib64/lib_SoundAlive_3DPosition_ver202.so
 vendor/lib64/lib_SoundAlive_AlbumArt_ver105.so
