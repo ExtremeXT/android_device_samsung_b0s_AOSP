@@ -1,6 +1,6 @@
 # Proprietary files
 
-# Audio
+# Audio - Main
 vendor/etc/LVACFS_Calibration.dat
 vendor/etc/LVACFS_Configuration.txt
 vendor/etc/LVACFS_ControlParams.txt
@@ -26,6 +26,23 @@ vendor/lib64/libspeakercalibration.so
 vendor/lib64/vendor.samsung.hardware.bluetooth.audio-V2-ndk.so
 vendor/lib64/vndk/libaudioroute.so:vendor/lib64/libaudioroute_samsung.so;FIX_SONAME
 vendor/lib64/vndk/libtinyalsa.so:vendor/lib64/libtinyalsa_samsung.so;FIX_SONAME
+
+# Audio - Effects
+vendor/etc/SoundBoosterParam.txt
+vendor/etc/audio_effects_sec.xml;SYMLINK=vendor/etc/audio_effects.xml
+vendor/etc/dolby/dax-default.xml
+vendor/lib64/lib_SoundAlive_3DPosition_ver202.so
+vendor/lib64/lib_SoundAlive_AlbumArt_ver105.so
+vendor/lib64/lib_SoundAlive_play_plus_ver800.so
+vendor/lib64/lib_SoundBooster_ver2000.so
+vendor/lib64/libprofileparamstorage.so
+vendor/lib64/libsecaudiocoreutils.so
+vendor/lib64/libspatializerparamstorage.so
+vendor/lib64/soundfx/libaudioeffectoffload.so
+vendor/lib64/soundfx/libaudiosaplus_sec.so
+vendor/lib64/soundfx/libmyspace.so
+vendor/lib64/soundfx/libsamsungSoundbooster_plus.so
+vendor/lib64/soundfx/libswdap.so
 
 # Bluetooth
 vendor/bin/hw/android.hardware.bluetooth@1.1-service-qti
