@@ -295,3 +295,10 @@ vendor/tee/driver/00000000-0000-0000-0000-53626f786476
 vendor/tee/driver/00000000-0000-0000-0000-564c544b4456
 vendor/tee/ffffffff-0000-0000-0000-000000000030
 vendor/tee/tui/resolution_common/ID00000100
+
+# Wi-Fi
+vendor/bin/init.insmod.sh
+vendor/etc/init/wifi.rc
+vendor/etc/init/wifi_qcom_ap_exynos.rc
+vendor/etc/wifi/p2p_supplicant_overlay.conf
+vendor/etc/wifi/wpa_supplicant_overlay.conf

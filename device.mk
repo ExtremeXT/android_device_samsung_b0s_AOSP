@@ -41,7 +41,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/non_ab_device.mk)
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # Soong Namespaces
-PRODUCT_SOONG_NAMESPACES += hardware/samsung
+PRODUCT_SOONG_NAMESPACES += \
+    hardware/qcom-caf/wlan \
+    hardware/samsung
 
 
 # Audio
@@ -124,3 +126,17 @@ PRODUCT_PACKAGES += \
 
 # VNDK
 PRODUCT_PACKAGES += vndservicemanager
+
+# Wi-Fi
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.wifi.direct.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.direct.xml \
+    frameworks/native/data/etc/android.hardware.wifi.passpoint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.passpoint.xml \
+    frameworks/native/data/etc/android.hardware.wifi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.xml \
+    frameworks/native/data/etc/android.software.ipsec_tunnels.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.ipsec_tunnels.xml
+
+PRODUCT_PACKAGES += \
+    android.hardware.wifi-service \
+    hostapd \
+    libcld80211 \
+    wpa_supplicant \
+    wpa_supplicant.conf
