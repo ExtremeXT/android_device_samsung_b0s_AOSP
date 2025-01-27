@@ -19,6 +19,7 @@ from extract_utils.main import (
 
 namespace_imports = [
     'device/samsung/e1s',
+    'hardware/samsung',
 ]
 
 
@@ -46,6 +47,8 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('libtinyalsa.so', 'libtinyalsa_samsung.so'),
     'vendor/lib64/libexynosgraphicbuffer.so': blob_fixup()
         .add_needed('libshim_ui.so'),
+    'vendor/lib64/libsec-ril.so': blob_fixup()
+        .replace_needed('libprotobuf-cpp-full-21.7.so', 'libprotobuf-cpp-full-21.12.so'),
     'vendor/lib64/libskeymint_cli.so': blob_fixup()
         .add_needed('libshim_crypto.so'),
 }  # fmt: skip

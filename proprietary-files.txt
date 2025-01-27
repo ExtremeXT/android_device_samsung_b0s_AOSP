@@ -225,7 +225,32 @@ vendor/lib64/libfloatingfeature.so
 vendor/lib64/libsecnativefeature.so
 
 # RIL
+vendor/bin/cbd
+vendor/bin/dmd
+vendor/bin/hw/rild
+vendor/etc/init/dmd.rc
+vendor/etc/init/init.baseband.rc
+vendor/etc/init/init.vendor.onebinary.rc
+vendor/etc/init/init.vendor.rilcommon.rc
+vendor/etc/init/vendor.samsung.rild.rc
+vendor/etc/vintf/manifest/vendor.samsung.hardware.radio_manifest_2_34.xml
+vendor/etc/vintf/manifest/vendor.samsung.hardware.sehradio_manifest_2_34.xml
+vendor/lib64/libSemDataProps.so
+vendor/lib64/libSemTelephonyProps.so
+vendor/lib64/libril_sem.so
+vendor/lib64/libsec-ril.so
 vendor/lib64/libsecril-client.so
+vendor/lib64/libsemnativecarrierfeature.so
+vendor/lib64/vendor.samsung.hardware.radio-V1-ndk.so
+vendor/lib64/vendor.samsung.hardware.radio.bridge-V1-ndk.so
+vendor/lib64/vendor.samsung.hardware.radio.channel-V1-ndk.so
+vendor/lib64/vendor.samsung.hardware.radio.data-V1-ndk.so
+vendor/lib64/vendor.samsung.hardware.radio.messaging-V1-ndk.so
+vendor/lib64/vendor.samsung.hardware.radio.sim-V1-ndk.so
+
+# RIL Dependencies
+vendor/lib64/libengmode_client.so
+vendor/lib64/libvkmanager_vendor.so
 
 # Security - Gatekeeper
 vendor/bin/hw/android.hardware.gatekeeper-service

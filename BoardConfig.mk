@@ -101,6 +101,9 @@ BOARD_SAMSUNG_DYNAMIC_PARTITIONS_SIZE := $(shell echo $$(( $(BOARD_SUPER_PARTITI
 TARGET_PRODUCT_PROP += device/samsung/e1s/configs/props/product.prop
 TARGET_VENDOR_PROP += device/samsung/e1s/configs/props/vendor.prop
 
+# RIL
+ENABLE_VENDOR_RIL_SERVICE := true
+
 # Ramdisks
 BOARD_RAMDISK_USE_LZ4 := true
 BOARD_VENDOR_RAMDISK_FRAGMENTS := dlkm
@@ -116,6 +119,9 @@ TARGET_USERIMAGES_USE_F2FS := true
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/e1s
 
+# SELinux
+include device/samsung_slsi/sepolicy/sepolicy.mk
+
 # USB
 $(call soong_config_set,samsungUsbGadgetVars,gadget_name,17900000.dwc3)
 
@@ -128,7 +134,9 @@ BOARD_AVB_RECOVERY_ROLLBACK_INDEX := 0
 BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 0
 
 # VINTF
-DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := device/samsung/e1s/configs/vintf/compatibility_matrix.device.xml
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
+    device/samsung/e1s/configs/vintf/compatibility_matrix.device.xml \
+    hardware/samsung/vintf/samsung_framework_compatibility_matrix.xml
 DEVICE_MANIFEST_FILE := device/samsung/e1s/configs/vintf/manifest.xml
 
 # Wi-Fi

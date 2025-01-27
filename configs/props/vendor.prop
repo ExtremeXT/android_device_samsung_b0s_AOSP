@@ -4,3 +4,6 @@ ro.audio.spatializer_enabled=true
 # Graphics
 ro.hardware.vulkan=samsung
 ro.opengles.version=196610
+
+# RIL
+ro.vendor.radio.default_network=26
