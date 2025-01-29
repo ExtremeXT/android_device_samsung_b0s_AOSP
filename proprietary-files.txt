@@ -51,6 +51,30 @@ vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
 vendor/lib64/hw/android.hardware.bluetooth@1.1-impl-qti.so
 vendor/lib64/vendor.samsung.hardware.bluetooth@2.0.so
 
+# Codec2
+vendor/bin/hw/samsung.hardware.media.c2@1.2-service
+vendor/etc/init/samsung.hardware.media.c2@1.2-service.rc
+vendor/etc/media_codecs_c2.xml
+vendor/etc/media_codecs_performance_c2.xml
+vendor/etc/seccomp_policy/codec2.vendor.base.policy
+vendor/etc/seccomp_policy/codec2.vendor.ext.policy
+vendor/etc/vintf/manifest/sec_c2_manifest_default0_1_2.xml
+vendor/lib64/libExynosC2Av1Dec.so
+vendor/lib64/libExynosC2ComponentStore.so
+vendor/lib64/libExynosC2H264Dec.so
+vendor/lib64/libExynosC2H264Enc.so
+vendor/lib64/libExynosC2HevcDec.so
+vendor/lib64/libExynosC2HevcEnc.so
+vendor/lib64/libExynosC2Vp8Dec.so
+vendor/lib64/libExynosC2Vp8Enc.so
+vendor/lib64/libExynosC2Vp9Dec.so
+vendor/lib64/libExynosC2Vp9Enc.so
+
+# Codec2 Dependencies
+vendor/lib64/libexynosgdc.so
+vendor/lib64/libexynosutils.so
+vendor/lib64/libexynosv4l2.so
+
 # Display - DQE
 vendor/etc/dqe/calib_data_colormode0_off.xml
 vendor/etc/dqe/calib_data_colormode0_s6e3fae_e1.xml
@@ -219,6 +243,9 @@ vendor/etc/ueventd.rc
 
 # Power
 vendor/lib64/libepic_helper.so
+vendor/lib64/libepicoperator.so
+vendor/lib64/vendor.samsung_slsi.hardware.epic-V1-ndk.so
+vendor/lib64/vendor.samsung_slsi.hardware.epic@1.0.so
 
 # Miscellaneous Dependencies
 vendor/lib64/libfloatingfeature.so

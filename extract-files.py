@@ -26,6 +26,10 @@ namespace_imports = [
 blob_fixups: blob_fixups_user_type = {
     'vendor/etc/init/init.s5e9945.rc': blob_fixup()
         .regex_replace('vendor_spay', 'system'),
+    'vendor/etc/media_codecs_performance_c2.xml': blob_fixup()
+        .regex_replace('.*sec\\.(.|\n)*D', '    </D'),
+    'vendor/etc/vintf/manifest/sec_c2_manifest_default0_1_2.xml': blob_fixup()
+        .regex_replace('.*t0.*\n', ''),
     (
         'vendor/lib64/hw/audio.primary.s5e9945.so',
         'vendor/lib64/libaudioproxy2.so',

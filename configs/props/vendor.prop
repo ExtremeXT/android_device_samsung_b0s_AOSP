@@ -1,6 +1,9 @@
 # Audio
 ro.audio.spatializer_enabled=true
 
+# Codec2
+vendor.debug.c2.sbwc.enable=true
+
 # Graphics
 ro.hardware.vulkan=samsung
 ro.opengles.version=196610
