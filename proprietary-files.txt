@@ -348,6 +348,10 @@ vendor/tee/driver/00000000-0000-0000-0000-564c544b4456
 vendor/tee/ffffffff-0000-0000-0000-000000000030
 vendor/tee/tui/resolution_common/ID00000100
 
+# Sensors
+vendor/etc/init/init.sensorhub.rc
+vendor/lib64/sensors.sensorhub.so
+
 # Wi-Fi
 vendor/bin/init.insmod.sh
 vendor/etc/init/wifi.rc
