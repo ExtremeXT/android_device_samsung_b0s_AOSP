@@ -35,6 +35,10 @@ PRODUCT_SHIPPING_API_LEVEL := 34
 PRODUCT_BRAND := Android
 PRODUCT_MANUFACTURER := samsung
 
+# Overlays
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
+PRODUCT_ENFORCE_RRO_TARGETS := *
+
 # Partitions
 $(call inherit-product, $(SRC_TARGET_DIR)/product/non_ab_device.mk)
 
@@ -102,6 +106,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/init/fstab.s5e9945:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.s5e9945 \
     $(LOCAL_PATH)/configs/init/fstab.s5e9945:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/fstab.s5e9945
+
+# Input
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/init/init.input.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.input.rc \
+    frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml
 
 # Kernel Modules
 PRODUCT_COPY_FILES += /dev/null:$(TARGET_COPY_OUT_RECOVERY)/root/dev/null
