@@ -12,7 +12,7 @@ vendor                           /vendor          erofs  ro                     
 vendor_dlkm                      /vendor_dlkm     erofs  ro                                                                                                              logical,first_stage_mount
 /dev/block/by-name/boot          /boot            emmc   defaults                                                                                                        recoveryonly
 /dev/block/by-name/recovery      /recovery        emmc   defaults                                                                                                        recoveryonly
-/dev/block/by-name/misc          /misc            emmc   defaults                                                                                                        recoveryonly
+/dev/block/by-name/misc          /misc            emmc   defaults                                                                                                        defaults
 /dev/block/by-name/cache         /cache           ext4   noatime,nosuid,nodev,noauto_da_alloc,discard,journal_checksum,data=ordered,errors=panic                         recoveryonly,check
 /dev/block/by-name/vbmeta        /vbmeta          emmc   defaults                                                                                                        first_stage_mount
 /dev/block/by-name/metadata      /metadata        f2fs   noatime,nosuid,nodev,discard,sync,fsync_mode=strict,data_flush                                                  first_stage_mount,check
