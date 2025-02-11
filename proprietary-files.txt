@@ -75,6 +75,10 @@ vendor/lib64/libexynosgdc.so
 vendor/lib64/libexynosutils.so
 vendor/lib64/libexynosv4l2.so
 
+# Compute
+vendor/lib64/hw/vulkan.samsung.so
+vendor/lib64/libSGPUOpenCL.so:vendor/lib64/libOpenCL.so;FIX_SONAME;TRYSRCFIRST
+
 # Display - DQE
 vendor/etc/dqe/calib_data_colormode0_off.xml
 vendor/etc/dqe/calib_data_colormode0_s6e3fae_e1.xml
@@ -90,7 +94,6 @@ vendor/lib64/libeis_utils.so
 vendor/lib64/libion_exynos.so
 
 # Display - Graphics
-vendor/lib64/hw/vulkan.samsung.so
 vendor/lib64/libdrm_sgpu.so
 vendor/lib64/hw/android.hardware.graphics.mapper@4.0-impl-sgr.so
 vendor/lib64/libsbwchelper.so
