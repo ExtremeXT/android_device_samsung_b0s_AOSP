@@ -4,10 +4,10 @@
 # specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
 #
 #<src>                           <mnt_point>      <type> <mnt_flags and options>                                                                                         <fs_mgr_flags>
-system                           /system          erofs  ro                                                                                                              logical,first_stage_mount
+system                           /system          ext4   ro                                                                                                              logical,first_stage_mount
 system_dlkm                      /system_dlkm     erofs  ro                                                                                                              logical,first_stage_mount
-system_ext                       /system_ext      erofs  ro                                                                                                              logical,first_stage_mount
-product                          /product         erofs  ro                                                                                                              logical,first_stage_mount
+system_ext                       /system_ext      ext4   ro                                                                                                              logical,first_stage_mount
+product                          /product         ext4   ro                                                                                                              logical,first_stage_mount
 vendor                           /vendor          erofs  ro                                                                                                              logical,first_stage_mount
 vendor_dlkm                      /vendor_dlkm     erofs  ro                                                                                                              logical,first_stage_mount
 /dev/block/by-name/boot          /boot            emmc   defaults                                                                                                        recoveryonly

@@ -17,6 +17,10 @@
 ## Inherit from e1s device
 $(call inherit-product, device/samsung/e1s/device.mk)
 
+# Branding
 PRODUCT_NAME := lineage_e1s
 PRODUCT_DEVICE := e1s
 PRODUCT_MODEL := e1s
+
+# GMS
+BUILD_FINGERPRINT := samsung/e1sxxx/e1s:14/UP1A.231005.007/S921BXXU5AYA5:user/release-keys
