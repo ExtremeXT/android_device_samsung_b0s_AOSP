@@ -124,6 +124,9 @@ TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/e1s
 # SELinux
 include device/samsung_slsi/sepolicy/sepolicy.mk
 
+# SELinux
+include device/samsung_slsi/sepolicy/sepolicy.mk
+
 # USB
 $(call soong_config_set,samsungUsbGadgetVars,gadget_name,17900000.dwc3)
 

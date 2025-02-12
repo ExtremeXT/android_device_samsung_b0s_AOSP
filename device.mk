@@ -79,6 +79,9 @@ TARGET_EXCLUDES_AUDIOFX := true
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth_le.xml
 
+# DRM
+PRODUCT_PACKAGES += android.hardware.drm-service.clearkey
+
 # Display
 $(call inherit-product, $(SRC_TARGET_DIR)/product/angle_default.mk)
 
