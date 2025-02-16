@@ -51,11 +51,59 @@ vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
 vendor/lib64/hw/android.hardware.bluetooth@1.1-impl-qti.so
 vendor/lib64/vendor.samsung.hardware.bluetooth@2.0.so
 
+# Camera - HAL
+vendor/lib64/hw/camera.s5e9945.so
+vendor/lib64/libExtIDRC.so
+vendor/lib64/libExtIRTA.so
+vendor/lib64/libIMUSensor.so
+vendor/lib64/libIRTA.so
+vendor/lib64/libTsAwb_front.so
+vendor/lib64/libTsAwb_rear.so
+vendor/lib64/libTsPrc_front.so
+vendor/lib64/libTsPrc_rear.so
+vendor/lib64/libeis_core.so
+vendor/lib64/libeis_interface.so
+vendor/lib64/libtriplecam_video_optical_zoom.so
+vendor/lib64/libtriplepreview_interface.so
+vendor/lib64/libuniapi.so
+vendor/lib64/libuniplugin.so
+vendor/lib64/libvdis_core.so
+vendor/lib64/libvdis_interface.so
+
+# Camera - HAL Dependencies
+vendor/lib64/libcav.so
+vendor/lib64/libcsc.so
+vendor/lib64/libexynos_sensor_interface.so
+vendor/lib64/libexynosscaler.so
+vendor/lib64/libgiantmscl.so
+vendor/lib64/libhwjpeg.so
+vendor/lib64/libhwjsqz.so
+vendor/lib64/libmpbase.so
+vendor/lib64/libsemseg.so
+vendor/lib64/libsensorlistener.so
+vendor/lib64/libtflitecore.so
+vendor/lib64/libvpl.so
+vendor/lib64/libvpl_dof.so
+vendor/lib64/vendor.samsung.hardware.thermal-V1-ndk.so
+vendor/lib64/vendor.samsung.hardware.thermal@1.0.so
+
+# Camera - Provider
+vendor/bin/hw/vendor.samsung.hardware.camera.provider-service_64
+vendor/etc/init/vendor.samsung.hardware.camera.provider-service_64.rc
+vendor/etc/vintf/manifest/vendor.samsung.hardware.camera.provider-service.xml
+vendor/lib64/lib_profiler.so
+vendor/lib64/libsamsungcamerahal.so
+vendor/lib64/libsamsungcamerahalutils.so
+vendor/lib64/libsamsungcamerahwl_impl.so
+vendor/lib64/vendor.samsung.hardware.camera.device-V1-ndk.so
+vendor/lib64/vendor.samsung.hardware.camera.provider-V1-ndk.so
+
 # Codec2
 vendor/bin/hw/samsung.hardware.media.c2@1.2-service
 vendor/etc/init/samsung.hardware.media.c2@1.2-service.rc
 vendor/etc/media_codecs_c2.xml
 vendor/etc/media_codecs_performance_c2.xml
+vendor/etc/media_profiles_V1_0.xml
 vendor/etc/seccomp_policy/codec2.vendor.base.policy
 vendor/etc/seccomp_policy/codec2.vendor.ext.policy
 vendor/etc/vintf/manifest/sec_c2_manifest_default0_1_2.xml
@@ -75,9 +123,20 @@ vendor/lib64/libexynosgdc.so
 vendor/lib64/libexynosutils.so
 vendor/lib64/libexynosv4l2.so
 
-# Compute
+# Compute - Graphics
 vendor/lib64/hw/vulkan.samsung.so
 vendor/lib64/libSGPUOpenCL.so:vendor/lib64/libOpenCL.so;FIX_SONAME;TRYSRCFIRST
+
+# Compute - Neural Networks
+vendor/lib64/libenn_common_utils.so
+vendor/lib64/libenn_cpu_operators.so
+vendor/lib64/libenn_engine_lib.so
+vendor/lib64/libenn_model.so
+vendor/lib64/libenn_public_api_cpp_lib.so
+vendor/lib64/libenn_user_driver_cpu.so
+vendor/lib64/libenn_user_driver_gpu_lib.so
+vendor/lib64/libenn_user_driver_unified.so
+vendor/lib64/libenn_user_lib.so
 
 # DRM
 vendor/apex/com.google.android.widevine.nonupdatable.apex

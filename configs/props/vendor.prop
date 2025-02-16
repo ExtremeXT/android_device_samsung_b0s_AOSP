@@ -2,11 +2,15 @@
 ro.audio.spatializer_enabled=true
 
 # Codec2
+debug.stagefright.c2inputsurface=-1
 vendor.debug.c2.sbwc.enable=true
 
 # Graphics
 ro.hardware.vulkan=samsung
 ro.opengles.version=196610
+
+# Power
+vendor.powerhal.disp.idle_support=false
 
 # RIL
 ro.vendor.radio.default_network=26

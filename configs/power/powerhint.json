@@ -1,0 +1,19 @@
+{
+    "Nodes": [
+        {
+            "Name": "Placeholder",
+            "Path": "/dev/null",
+            "Values": [
+                "0"
+            ]
+        }
+    ],
+    "Actions": [
+        {
+            "PowerHint": "PLACEHOLDER",
+            "Node": "Placeholder",
+            "Duration": 0,
+            "Value": "0"
+        }
+    ]
+}
