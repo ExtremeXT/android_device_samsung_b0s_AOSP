@@ -247,36 +247,4 @@
         <value>1895</value>
         <value>2367</value>
     </array>
-    <array name="gpu.speeds">
-        <value>252000</value>
-        <value>315000</value>
-        <value>350000</value>
-        <value>400000</value>
-        <value>450000</value>
-        <value>500000</value>
-        <value>545000</value>
-        <value>600000</value>
-        <value>650000</value>
-        <value>700000</value>
-        <value>800000</value>
-        <value>900000</value>
-        <value>1000000</value>
-        <value>1095000</value>
-    </array>
-    <array name="gpu.active">
-        <value>278</value>
-        <value>369</value>
-        <value>419</value>
-        <value>485</value>
-        <value>548</value>
-        <value>652</value>
-        <value>728</value>
-        <value>804</value>
-        <value>934</value>
-        <value>1064</value>
-        <value>1272</value>
-        <value>1638</value>
-        <value>2087</value>
-        <value>2435</value>
-    </array>
 </device>
