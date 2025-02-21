@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <device name="Android">
-    <item name="none">0</item>
     <item name="ambient.on">24.2</item>
     <item name="screen.on">30.4</item>
     <item name="screen.full">215.2</item>
@@ -11,9 +10,7 @@
     <item name="radio.scanning">107.8</item>
     <array name="radio.on">
         <value>10.7</value>
-        <value>10.7</value>
     </array>
-    <item name="modem.controller.sleep">0</item>
     <item name="modem.controller.idle">78</item>
     <item name="modem.controller.rx">92</item>
     <array name="modem.controller.tx">
@@ -27,17 +24,7 @@
     <item name="wifi.controller.idle">1</item>
     <item name="wifi.controller.rx">120</item>
     <item name="wifi.controller.tx">300</item>
-    <array name="wifi.controller.tx_levels">
-        <value>0</value>
-    </array>
     <item name="wifi.controller.voltage">4000</item>
-    <array name="wifi.batchedscan">
-        <value>.0002</value>
-        <value>.002</value>
-        <value>.02</value>
-        <value>.2</value>
-        <value>2</value>
-    </array>
     <item name="gps.on">64.8</item>
     <item name="bluetooth.controller.idle">3.5</item>
     <item name="bluetooth.controller.rx">12</item>
