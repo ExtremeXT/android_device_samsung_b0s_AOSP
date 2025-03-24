@@ -76,6 +76,8 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('libtinyalsa.so', 'libtinyalsa_samsung.so'),
     'vendor/lib64/libexynosgraphicbuffer.so': blob_fixup()
         .add_needed('libshim_ui.so'),
+    'vendor/lib64/libsamsungcamerahal.so': blob_fixup()
+        .sig_replace('e0 3a', 'a0 3b'),
     'vendor/lib64/libsec-ril.so': blob_fixup()
         .replace_needed('libprotobuf-cpp-full-21.7.so', 'libprotobuf-cpp-full-21.12.so')
         .sig_replace(
