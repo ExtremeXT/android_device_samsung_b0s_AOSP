@@ -1,5 +1,20 @@
+install_symlink {
+    name: "etc_root_symlink",
+    recovery: true,
+    installed_location: "etc/root",
+    symlink_target: "-r $(PRODUCT_OUT)/recovery/root",
+}
+
 prebuilt_etc {
     name: "hdr_samsung_mx.key",
     vendor: true,
     src: ":empty_file",
+}
+
+prebuilt_etc {
+    name: "null",
+    relative_install_path: "root/dev",
+    recovery: true,
+    src: ":empty_file",
+    required: ["etc_root_symlink"],
 }

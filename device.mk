@@ -129,10 +129,9 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml
 
 # Kernel Modules
-PRODUCT_COPY_FILES += /dev/null:$(TARGET_COPY_OUT_RECOVERY)/root/dev/null
-
 PRODUCT_PACKAGES += \
     linker.vendor_ramdisk \
+    null \
     toolbox.vendor_ramdisk
 
 # Keystore
