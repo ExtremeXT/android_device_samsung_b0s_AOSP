@@ -110,9 +110,6 @@ PRODUCT_PACKAGES += hdr_samsung_mx.key
 # Fastbootd
 PRODUCT_PACKAGES += fastbootd
 
-# Haptics
-PRODUCT_PACKAGES += vibrator.default
-
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health-service.example \
@@ -154,7 +151,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/com.nxp.mifare.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.nxp.mifare.xml
 
 PRODUCT_PACKAGES += \
-    NfcNci \
     Tag \
     android.hardware.secure_element-service.thales \
     com.android.nfc_extras
