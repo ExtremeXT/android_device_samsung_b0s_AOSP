@@ -64,6 +64,9 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/samsung
 
 
+# AVF
+$(call inherit-product, packages/modules/Virtualization/apex/product_packages.mk)
+
 # Audio
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
