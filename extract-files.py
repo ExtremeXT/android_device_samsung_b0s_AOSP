@@ -31,6 +31,8 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed(
             'android.hardware.graphics.composer@2.2-resources.so',
             'android.hardware.graphics.composer@2.2-resources_samsung.so'),
+    'vendor/etc/init/android.hardware.security.keymint-service.samsung.rc': blob_fixup()
+        .regex_replace('-service', '-service.samsung'),
     'vendor/etc/init/init.nfc.samsung.rc': blob_fixup()
         .regex_replace('system', 'secure_element'),
     'vendor/etc/init/init.s5e9945.rc': blob_fixup()
