@@ -208,13 +208,10 @@ mcd-panel-s6e3fac_mu1s.ko
 usdm-panel-oled-common.ko
 sec_switch_class.ko
 sec_debug.ko
-sec_debug_test.ko
 sec_debug_dprm.ko
 sec_debug_dprt.ko
 sec_debug_extra_info.ko
-sec_debug_hw_param.ko
 sec_debug_reset_reason.ko
-sec_debug_wdd_info.ko
 sec_debug_dtask.ko
 sec_debug_softdog.ko
 sec_debug_sched_info.ko
@@ -222,6 +219,10 @@ sec_debug_stacktrace.ko
 sec_debug_hardlockup_info.ko
 sec_debug_sched_report.ko
 sec_debug_kerror_report.ko
+sec_debug_slab_info.ko
+sec_debug_test.ko
+sec_debug_hw_param.ko
+sec_debug_wdd_info.ko
 input_booster_lkm.ko
 sdp.ko
 vbus_notifier.ko
@@ -268,6 +269,7 @@ sec_pd.ko
 sb_wireless.ko
 sec-battery.ko
 cps4038-charger.ko
+clo.ko
 hwmon.ko
 btpower.ko
 exynos-bts.ko

@@ -215,7 +215,6 @@ vendor/firmware/calliope_dram.bin
 vendor/firmware/calliope_sram.bin
 vendor/firmware/camera_tilt_calibration_info_1_2
 vendor/firmware/camera_tilt_calibration_info_3_1
-vendor/firmware/camera_tilt_calibration_info_5_3
 vendor/firmware/compress_capture.bin
 vendor/firmware/cs35l43-bot-dsp1-spk-prot.bin
 vendor/firmware/cs35l43-bot-dsp1-spk-prot.wmfw
@@ -245,6 +244,7 @@ vendor/firmware/dsp_ivp_pm.bin
 vendor/firmware/dsp_reloc_rules.bin
 vendor/firmware/eis_stab_strength.json
 vendor/firmware/hmtbtfw20.tlv
+vendor/firmware/hmtnv20.b20
 vendor/firmware/hmtnv20.b39
 vendor/firmware/hmtnv20.b3c
 vendor/firmware/icc_profile.bin
@@ -341,8 +341,8 @@ vendor/etc/init/init.vendor.rilcommon.rc
 vendor/etc/init/vendor.samsung.rild.rc
 vendor/etc/vintf/manifest/vendor.samsung.hardware.radio_manifest_2_34.xml
 vendor/etc/vintf/manifest/vendor.samsung.hardware.sehradio_manifest_2_34.xml
-vendor/lib64/libSemDataProps.so
-vendor/lib64/libSemTelephonyProps.so
+vendor/lib64/libVendorSemDataProps.so
+vendor/lib64/libVendorSemTelephonyProps.so
 vendor/lib64/libril_sem.so
 vendor/lib64/libsec-ril.so
 vendor/lib64/libsecril-client.so
