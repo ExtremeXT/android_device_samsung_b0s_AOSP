@@ -21,7 +21,8 @@ TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_VARIANT := cortex-a76
 
 # DTS
-BOARD_DTBO_CFG := device/samsung/e1s/configs/kernel/dtbo.cfg
+BOARD_DTB_CFG := device/samsung/e1s/configs/kernel/dts/dtb.cfg
+BOARD_DTBO_CFG := device/samsung/e1s/configs/kernel/dts/dtbo.cfg
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_INCLUDE_RECOVERY_DTBO := true
 BOARD_KERNEL_SEPARATED_DTBO := true
