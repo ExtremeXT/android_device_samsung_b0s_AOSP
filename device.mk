@@ -14,12 +14,22 @@
 # limitations under the License.
 #
 
-# Inherit dalvik heap configuration
-$(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
-
-# Inherit from generic products, most specific first
+# All components inherited here go to system image
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/generic_system.mk)
+
+# All components inherited here go to system_ext image
+$(call inherit-product, $(SRC_TARGET_DIR)/product/handheld_system_ext.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/telephony_system_ext.mk)
+
+# All components inherited here go to product image
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_product.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/window_extensions.mk)
+
+# All components inherited here go to vendor image
+$(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/handheld_vendor.mk)
+$(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
 # Inherit proprietary files
 $(call inherit-product, vendor/samsung/e1s/e1s-vendor.mk)
@@ -110,6 +120,12 @@ PRODUCT_PACKAGES += hdr_samsung_mx.key
 # Fastbootd
 PRODUCT_PACKAGES += fastbootd
 
+# General
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml
+
+PRODUCT_PACKAGES += vndservicemanager
+
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health-service.example \
@@ -150,10 +166,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.se.omapi.uicc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.se.omapi.uicc.xml \
     frameworks/native/data/etc/com.nxp.mifare.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.nxp.mifare.xml
 
-PRODUCT_PACKAGES += \
-    Tag \
-    android.hardware.secure_element-service.thales \
-    com.android.nfc_extras
+PRODUCT_PACKAGES += android.hardware.secure_element-service.thales
 
 # Power
 PRODUCT_COPY_FILES += \
@@ -201,9 +214,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.usb-service.samsung \
     android.hardware.usb.gadget-service.samsung
-
-# VNDK
-PRODUCT_PACKAGES += vndservicemanager
 
 # Wi-Fi
 PRODUCT_COPY_FILES += \
