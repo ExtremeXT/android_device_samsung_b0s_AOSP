@@ -104,7 +104,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.raw.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.raw.xml
 
 # DRM
-PRODUCT_PACKAGES += android.hardware.drm-service.clearkey
+PRODUCT_PACKAGES += com.android.hardware.drm.clearkey
 
 # Display
 $(call inherit-product, $(SRC_TARGET_DIR)/product/angle_default.mk)
