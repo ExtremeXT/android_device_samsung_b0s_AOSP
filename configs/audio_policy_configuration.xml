@@ -14,21 +14,20 @@
      limitations under the License.
 -->
 
-<audioPolicyConfiguration version="7.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+<audioPolicyConfiguration version="7.1" xmlns:xi="http://www.w3.org/2001/XInclude">
 
     <!-- Global configuration Decalaration -->
     <globalConfiguration speaker_drc_enabled="false" call_screen_mode_supported="true"/>
 
     <modules>
         <!-- Primary Audio HAL -->
-        <module name="primary" halVersion="2.0">
+        <module name="primary" halVersion="3.0">
             <attachedDevices>
                 <item>Speaker</item>
                 <item>Earpiece</item>
-                <item>Telephony Tx</item>
                 <item>Built-In Mic</item>
                 <item>Built-In Back Mic</item>
-                <item>Telephony Rx</item>
+                <item>Voice Call Mic</item>
                 <item>Echo-Reference In</item>
             </attachedDevices>
             <defaultOutputDevice>Speaker</defaultOutputDevice>
@@ -96,13 +95,6 @@
                              channelMasks="AUDIO_CHANNEL_OUT_5POINT1 AUDIO_CHANNEL_OUT_6POINT1 AUDIO_CHANNEL_OUT_7POINT1"/>
                 </mixPort>
 
-                <mixPort name="incall_music_uplink" role="source"
-                        flags="AUDIO_OUTPUT_FLAG_INCALL_MUSIC">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="8000 16000 48000"
-                             channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
-                </mixPort>
-
                 <mixPort name="spatializer" role="source" flags="AUDIO_OUTPUT_FLAG_SPATIALIZER">
                     <profile name="sa" format="AUDIO_FORMAT_PCM_32_BIT"
                              samplingRates="48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
@@ -156,7 +148,7 @@
                 <devicePort tagName="Built-In Back Mic" type="AUDIO_DEVICE_IN_BACK_MIC" role="source"/>
 
                 <devicePort tagName="BT SCO Headset Mic" type="AUDIO_DEVICE_IN_BLUETOOTH_SCO_HEADSET" role="source"/>
-                <devicePort tagName="Telephony Rx" type="AUDIO_DEVICE_IN_TELEPHONY_RX" role="source"/>
+                <devicePort tagName="Voice Call Mic" type="AUDIO_DEVICE_IN_VOICE_CALL" role="source"/>
 
                 <!-- USB Devices -->
                 <devicePort tagName="USB Device Out" type="AUDIO_DEVICE_OUT_USB_DEVICE" role="sink"/>
@@ -164,7 +156,6 @@
                 <devicePort tagName="USB Device In" type="AUDIO_DEVICE_IN_USB_DEVICE" role="source"/>
                 <devicePort tagName="USB Headset In" type="AUDIO_DEVICE_IN_USB_HEADSET" role="source"/>
 
-                <devicePort tagName="Telephony Tx" type="AUDIO_DEVICE_OUT_TELEPHONY_TX" role="sink"/>
                 <devicePort tagName="Echo-Reference In" type="AUDIO_DEVICE_IN_ECHO_REFERENCE" role="source"/>
             </devicePorts>
 
@@ -189,17 +180,15 @@
 
                 <route type="mix" sink="AUX DIGITAL"
                        sources="aux output"/>
-                <route type="mix" sink="Telephony Tx"
-                       sources="incall_music_uplink"/>
 
                 <route type="mix" sink="primary input"
-                       sources="Built-In Mic,Built-In Back Mic,BT SCO Headset Mic,Telephony Rx,USB Device In,USB Headset In"/>
+                       sources="Built-In Mic,Built-In Back Mic,BT SCO Headset Mic,Voice Call Mic,USB Device In,USB Headset In"/>
                 <route type="mix" sink="fast input"
                        sources="Built-In Mic,Built-In Back Mic,USB Device In,USB Headset In"/>
                 <route type="mix" sink="mmap_no_irq_in"
                        sources="Built-In Mic,Built-In Back Mic,USB Device In,USB Headset In"/>
                 <route type="mix" sink="hotword input"
-                       sources="Built-In Mic,Built-In Back Mic,BT SCO Headset Mic,Telephony Rx,USB Device In,USB Headset In"/>
+                       sources="Built-In Mic,Built-In Back Mic,BT SCO Headset Mic,Voice Call Mic,USB Device In,USB Headset In"/>
                 <route type="mix" sink="hifi_input" sources="USB Device In"/>
                 <route type="mix" sink="echo_ref input" sources="Echo-Reference In"/>
             </routes>
@@ -210,7 +199,7 @@
         <xi:include href="usb_audio_policy_configuration.xml"/>
 
         <!-- Bluetooth Audio HAL -->
-        <xi:include href="bluetooth_audio_policy_configuration.xml"/>
+        <xi:include href="bluetooth_with_le_audio_policy_configuration_7_0.xml"/>
 
         <!-- Remote Submix Audio HAL -->
         <xi:include href="r_submix_audio_policy_configuration.xml"/>
