@@ -5,7 +5,6 @@ vendor/etc/LVACFS_Calibration.dat
 vendor/etc/LVACFS_Configuration.txt
 vendor/etc/LVACFS_ControlParams.txt
 vendor/etc/audio_board_info.xml
-vendor/etc/audio_policy_configuration_le_offload_disabled.xml:vendor/etc/audio_policy_configuration.xml;TRYSRCFIRST
 vendor/etc/mixer_gains.xml
 vendor/etc/mixer_paths.xml
 vendor/lib64/hw/audio.primary.s5e9945.so
