@@ -72,8 +72,8 @@
                              channelMasks="AUDIO_CHANNEL_OUT_STEREO AUDIO_CHANNEL_OUT_MONO"/>
                 </mixPort>
 
-                <mixPort name="aux output" role="source">
-                    <profile name="aux_out" format="AUDIO_FORMAT_PCM_16_BIT"
+                <mixPort name="hdmi" role="source">
+                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
                              samplingRates="48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
                 </mixPort>
 
@@ -142,7 +142,7 @@
                 <devicePort tagName="BT SCO Headset" type="AUDIO_DEVICE_OUT_BLUETOOTH_SCO_HEADSET" role="sink"/>
                 <devicePort tagName="BT SCO Car Kit" type="AUDIO_DEVICE_OUT_BLUETOOTH_SCO_CARKIT" role="sink"/>
 
-                <devicePort tagName="AUX DIGITAL" type="AUDIO_DEVICE_OUT_AUX_DIGITAL" role="sink"/>
+                <devicePort tagName="HDMI" type="AUDIO_DEVICE_OUT_HDMI" role="sink"/>
 
                 <devicePort tagName="Built-In Mic" type="AUDIO_DEVICE_IN_BUILTIN_MIC" role="source" default="true"/>
                 <devicePort tagName="Built-In Back Mic" type="AUDIO_DEVICE_IN_BACK_MIC" role="source"/>
@@ -178,8 +178,8 @@
                 <route type="mix" sink="BT SCO Car Kit"
                        sources="primary output,fast output,deep_buffer,haptic"/>
 
-                <route type="mix" sink="AUX DIGITAL"
-                       sources="aux output"/>
+                <route type="mix" sink="HDMI"
+                       sources="hdmi"/>
 
                 <route type="mix" sink="primary input"
                        sources="Built-In Mic,Built-In Back Mic,BT SCO Headset Mic,Voice Call Mic,USB Device In,USB Headset In"/>
