@@ -1,0 +1,6 @@
+prebuilt_etc {
+    name: "hals.conf",
+    src: "hals.conf",
+    vendor: true,
+    relative_install_path: "sensors",
+}

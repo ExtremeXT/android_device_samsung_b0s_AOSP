@@ -35,3 +35,17 @@ prebuilt_etc {
     filename: "fstab.s5e9945",
     vendor_ramdisk: true,
 }
+
+prebuilt_etc {
+    name: "init.input.rc",
+    src: "init.input.rc",
+    vendor: true,
+    relative_install_path: "init",
+}
+
+prebuilt_etc {
+    name: "init.s5e9945.usb.rc",
+    src: "init.s5e9945.usb.rc",
+    vendor: true,
+    relative_install_path: "init",
+}
