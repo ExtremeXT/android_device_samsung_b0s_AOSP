@@ -293,7 +293,7 @@ vendor/firmware/setfile_3lu.bin
 vendor/firmware/setfile_gn3.bin
 vendor/firmware/setfile_imx564.bin
 vendor/firmware/tsp_stm/fts2ba61c_e1.bin
-vendor/firmware/tsp_stm/fts2ba61y_e1s.bin
+vendor/firmware/tsp_stm/fts2ba61y_r0s.bin
 vendor/firmware/txse1.bin
 vendor/firmware/txse2.bin
 vendor/firmware/uNPU.bin
