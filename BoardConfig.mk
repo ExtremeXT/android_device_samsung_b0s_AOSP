@@ -56,15 +56,15 @@ BOARD_MKBOOTIMG_INIT_ARGS := $(BOARD_MKBOOTIMG_ARGS)
 TARGET_KERNEL_ADDITIONAL_FLAGS := \
     DTC_FLAGS=-@ \
     KCFLAGS=-D__ANDROID_COMMON_KERNEL__ \
-    TARGET_SOC=s5e9945
+    TARGET_SOC=s5e9925
 TARGET_KERNEL_CONFIG := \
     $(shell KCONFIG_CONFIG=kernel/samsung/r0s/arch/arm64/configs/erd9945_u_gki_defconfig \
     kernel/samsung/r0s/scripts/kconfig/merge_config.sh -m -r \
     kernel/samsung/r0s/arch/arm64/configs/gki_defconfig \
-    kernel/samsung/r0s/arch/arm64/configs/s5e9945-base_defconfig \
-    kernel/samsung/r0s/arch/arm64/configs/s5e9945-bazel_defconfig \
-    kernel/samsung/r0s/arch/arm64/configs/s5e9945_user.cfg \
-    kernel/samsung/r0s/arch/arm64/configs/s5e9945-user_defconfig \
+    kernel/samsung/r0s/arch/arm64/configs/s5e9925-base_defconfig \
+    kernel/samsung/r0s/arch/arm64/configs/s5e9925-bazel_defconfig \
+    kernel/samsung/r0s/arch/arm64/configs/s5e9925_user.cfg \
+    kernel/samsung/r0s/arch/arm64/configs/s5e9925-user_defconfig \
     1>/dev/null; echo erd9945_u_gki_defconfig)
 TARGET_KERNEL_NO_GCC := true
 
@@ -111,7 +111,7 @@ BOARD_VENDOR_RAMDISK_FRAGMENT.dlkm.MKBOOTIMG_ARGS := --ramdisk_type DLKM
 
 # Recovery
 BOARD_RECOVERY_MKBOOTIMG_ARGS := --header_version 2 --cmdline ""
-TARGET_RECOVERY_FSTAB_GENRULE := gen_fstab_s5e9945_recovery
+TARGET_RECOVERY_FSTAB_GENRULE := gen_fstab_s5e9925_recovery
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true

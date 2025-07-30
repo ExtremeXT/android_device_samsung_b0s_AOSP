@@ -113,8 +113,8 @@ PRODUCT_PACKAGES += \
 
 # Init
 PRODUCT_PACKAGES += \
-    fstab.s5e9945_vendor \
-    fstab.s5e9945_vendor_ramdisk
+    fstab.s5e9925_vendor \
+    fstab.s5e9925_vendor_ramdisk
 
 # Input
 PRODUCT_PACKAGES += init.input.rc
@@ -202,7 +202,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.usb-service.samsung \
     android.hardware.usb.gadget-service.samsung \
-    init.s5e9945.usb.rc
+    init.s5e9925.usb.rc
 
 # Wi-Fi
 PRODUCT_PACKAGES += \

@@ -7,7 +7,7 @@ vendor/etc/LVACFS_ControlParams.txt
 vendor/etc/audio_board_info.xml
 vendor/etc/mixer_gains.xml
 vendor/etc/mixer_paths.xml
-vendor/lib64/hw/audio.primary.s5e9945.so
+vendor/lib64/hw/audio.primary.s5e9925.so
 vendor/lib64/libSamsungPostProcessConvertor.so
 vendor/lib64/lib_SamsungRec_08020.so
 vendor/lib64/lib_SoundAlive_SRC384_ver320.so
@@ -46,7 +46,7 @@ vendor/lib64/soundfx/libswspatializer.so
 
 # Audio - Hotword
 vendor/etc/sound_trigger_info.xml
-vendor/lib64/hw/sound_trigger.primary.s5e9945.so
+vendor/lib64/hw/sound_trigger.primary.s5e9925.so
 system_ext/framework/com.android.hotwordenrollment.common.util.jar
 system_ext/etc/permissions/com.android.hotwordenrollment.common.util.xml
 product/etc/permissions/privapp-permissions-google-product.xml
@@ -61,7 +61,7 @@ vendor/lib64/hw/android.hardware.bluetooth@1.1-impl-qti.so
 vendor/lib64/vendor.samsung.hardware.bluetooth@2.0.so
 
 # Camera - HAL
-vendor/lib64/hw/camera.s5e9945.so
+vendor/lib64/hw/camera.s5e9925.so
 vendor/lib64/libExtIDRC.so
 vendor/lib64/libExtIRTA.so
 vendor/lib64/libIMUSensor.so
@@ -313,8 +313,8 @@ vendor/etc/vintf/manifest/vendor.samsung.hardware.vibrator-default.xml
 vendor/lib64/vendor.samsung.hardware.vibrator-V5-ndk.so
 
 # Init
-recovery/ramdisk/init.recovery.s5e9945.rc:recovery/root/init.recovery.s5e9945.rc
-vendor/etc/init/init.s5e9945.rc
+recovery/ramdisk/init.recovery.s5e9925.rc:recovery/root/init.recovery.s5e9925.rc
+vendor/etc/init/init.s5e9925.rc
 vendor/etc/ueventd.rc
 
 # Power
@@ -370,7 +370,7 @@ vendor/lib64/libvkmanager_vendor.so
 # Security - Gatekeeper
 vendor/bin/hw/android.hardware.gatekeeper-service
 vendor/etc/init/android.hardware.gatekeeper-service.rc
-vendor/lib64/hw/gatekeeper.s5e9945.so
+vendor/lib64/hw/gatekeeper.s5e9925.so
 
 # Security - Keymint
 vendor/bin/hw/android.hardware.security.keymint-service:vendor/bin/hw/android.hardware.security.keymint-service.samsung
