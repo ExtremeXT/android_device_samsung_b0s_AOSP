@@ -54,28 +54,18 @@ BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_MKBOOTIMG_ARGS := --header_version $(BOARD_BOOT_HEADER_VERSION)
 BOARD_MKBOOTIMG_INIT_ARGS := $(BOARD_MKBOOTIMG_ARGS)
 TARGET_KERNEL_ADDITIONAL_FLAGS := \
-    DTC_FLAGS=-@ \
-    KCFLAGS=-D__ANDROID_COMMON_KERNEL__ \
+    LLVM=1 \
+    LLVM_IAS=1 \
     TARGET_SOC=s5e9925
-TARGET_KERNEL_CONFIG := \
-    $(shell KCONFIG_CONFIG=kernel/samsung/r0s/arch/arm64/configs/erd9945_u_gki_defconfig \
-    kernel/samsung/r0s/scripts/kconfig/merge_config.sh -m -r \
-    kernel/samsung/r0s/arch/arm64/configs/gki_defconfig \
-    kernel/samsung/r0s/arch/arm64/configs/s5e9925-base_defconfig \
-    kernel/samsung/r0s/arch/arm64/configs/s5e9925-bazel_defconfig \
-    kernel/samsung/r0s/arch/arm64/configs/s5e9925_user.cfg \
-    kernel/samsung/r0s/arch/arm64/configs/s5e9925-user_defconfig \
-    1>/dev/null; echo erd9945_u_gki_defconfig)
+TARGET_KERNEL_CONFIG := s5e9925_r0sxxx_defconfig
 TARGET_KERNEL_NO_GCC := true
 
 # Modules
 BOARD_RECOVERY_RAMDISK_KERNEL_MODULES_LOAD := $(shell cat device/samsung/r0s/configs/kernel/modules/ramdisk)
-BOARD_SYSTEM_KERNEL_MODULES_LOAD := $(shell cat device/samsung/r0s/configs/kernel/modules/system)
-BOARD_VENDOR_KERNEL_MODULES_LOAD := kiwi_v2.ko sec_debug_ssld_info.ko cfg80211.ko
+BOARD_VENDOR_KERNEL_MODULES_LOAD := sec_debug_coredump.ko fingerprint.ko fingerprint_sysfs.ko input_booster_lkm.ko wlan.ko
 BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(BOARD_RECOVERY_RAMDISK_KERNEL_MODULES_LOAD)
 BOOT_KERNEL_MODULES := $(BOARD_RECOVERY_RAMDISK_KERNEL_MODULES_LOAD)
 RECOVERY_KERNEL_MODULES := $(BOARD_RECOVERY_RAMDISK_KERNEL_MODULES_LOAD)
-SYSTEM_KERNEL_MODULES := $(BOARD_SYSTEM_KERNEL_MODULES_LOAD)
 
 # Partitions - Classic
 BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
