@@ -23,4 +23,5 @@ PRODUCT_DEVICE := r0s
 PRODUCT_MODEL := r0s
 
 # GMS
-BUILD_FINGERPRINT := samsung/r0sxxx/r0s:14/UP1A.231005.007/S921BXXU5BYD9:user/release-keys
+BUILD_FINGERPRINT := samsung/r0sxxx/r0s:15/AP3A.240905.015.A2/S901BXXSEFYE3:user/release-keys
+
