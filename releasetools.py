@@ -25,7 +25,6 @@ def AddImage(info, basename, dest):
 
 def FullOTA_InstallEnd(info):
   AddImage(info, "dtbo.img", "/dev/block/by-name/dtbo")
-  AddImage(info, "init_boot.img", "/dev/block/by-name/init_boot")
   AddImage(info, "vbmeta.img", "/dev/block/by-name/vbmeta")
   AddImage(info, "vendor_boot.img", "/dev/block/by-name/vendor_boot")
   return
