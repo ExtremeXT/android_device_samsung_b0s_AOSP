@@ -96,7 +96,7 @@ PRODUCT_PACKAGES += com.android.hardware.drm.clearkey
 $(call inherit-product, $(SRC_TARGET_DIR)/product/angle_default.mk)
 
 PRODUCT_COPY_FILES += \
-    vendor/samsung/r0s/proprietary/recovery/root/lib/firmware/sgpu/vangogh_lite_unified_evt1.bin:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/lib/firmware/sgpu/vangogh_lite_unified_evt1.bin
+    vendor/samsung/r0s/proprietary/recovery/root/lib/firmware/sgpu/vangogh_lite_unified.bin:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/lib/firmware/sgpu/vangogh_lite_unified.bin
 
 PRODUCT_PACKAGES += hdr_samsung_mx.key
 
