@@ -135,8 +135,6 @@ wlan_firmware_service.ko
 cnss_plat_ipc_qmi_svc.ko
 cnss_nl.ko
 cnss_prealloc.ko
-asix.ko
-ax88179_178a.ko
 smsc75xx.ko
 smsc95xx.ko
 cdc_mbim.ko
@@ -327,8 +325,6 @@ snd-soc-samsung-slif.ko
 rainbow_prince.ko
 sec_audio_sysfs.ko
 sec_audio_debug.ko
-tcp_westwood.ko
-tcp_htcp.ko
 cfg80211.ko
 qrtr.ko
 ns.ko
