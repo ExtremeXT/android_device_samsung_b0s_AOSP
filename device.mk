@@ -89,16 +89,27 @@ PRODUCT_PACKAGES += \
 
 TARGET_EXCLUDES_AUDIOFX := true
 
+# Camera
+PRODUCT_PACKAGES += \
+    android.hardware.camera.provider-service.samsung \
+    libhypervintf \
+    libsensorndkbridge
+
 # DRM
 PRODUCT_PACKAGES += com.android.hardware.drm.clearkey
 
 # Display
 $(call inherit-product, $(SRC_TARGET_DIR)/product/angle_default.mk)
 
+PRODUCT_PACKAGES += \
+    android.hardware.graphics.composer@2.4-service
+
 PRODUCT_COPY_FILES += \
     vendor/samsung/r0s/proprietary/recovery/root/lib/firmware/sgpu/vangogh_lite_unified.bin:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/lib/firmware/sgpu/vangogh_lite_unified.bin
 
-PRODUCT_PACKAGES += hdr_samsung_mx.key
+PRODUCT_PACKAGES += \
+    hdr_samsung_mx.key \
+    libshim_ui
 
 # Fastbootd
 PRODUCT_PACKAGES += fastbootd
@@ -119,6 +130,11 @@ PRODUCT_PACKAGES += \
 # Input
 PRODUCT_PACKAGES += init.input.rc
 
+# Gatekeeper
+PRODUCT_PACKAGES += \
+    android.hardware.gatekeeper@1.0-impl:64 \
+    android.hardware.gatekeeper@1.0-service
+
 # Kernel Modules
 PRODUCT_PACKAGES += \
     linker.vendor_ramdisk \
@@ -127,6 +143,14 @@ PRODUCT_PACKAGES += \
 
 # Linker
 PRODUCT_PACKAGES += public.libraries.txt
+
+# NFC
+PRODUCT_PACKAGES += \
+    android.hardware.nfc-service.nxp \
+    android.hardware.secure_element-service.nxp \
+    com.android.nfc_extras \
+    libchrome.vendor \
+    Tag
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -182,10 +206,15 @@ PRODUCT_PACKAGES += \
 # RIL
 PRODUCT_PACKAGES += \
     secril_config_svc \
-    sehradiomanager
-
-# Secure Element
-PRODUCT_PACKAGES += android.hardware.secure_element-service.thales-st33
+    sehradiomanager \
+    android.hardware.radio@1.2.vendor:64 \
+    android.hardware.radio.config-V1-ndk.vendor:64 \
+    android.hardware.radio.data-V1-ndk.vendor:64 \
+    android.hardware.radio.messaging-V1-ndk.vendor:64 \
+    android.hardware.radio.modem-V1-ndk.vendor:64 \
+    android.hardware.radio.network-V1-ndk.vendor:64 \
+    android.hardware.radio.sim-V1-ndk.vendor:64 \
+    android.hardware.radio.voice-V1-ndk.vendor:64
 
 # Sensors
 PRODUCT_PACKAGES += \
@@ -203,6 +232,10 @@ PRODUCT_PACKAGES += \
     android.hardware.usb-service.samsung \
     android.hardware.usb.gadget-service.samsung \
     init.s5e9925.usb.rc
+
+# Vibrator
+PRODUCT_PACKAGES += \
+    android.hardware.vibrator-service.samsung
 
 # Wi-Fi
 PRODUCT_PACKAGES += \
