@@ -3,12 +3,12 @@
 //
 // SPDX-License-Identifier: Apache-2.0
 //
-
 cc_library_shared {
     name: "libshim_ui",
     shared_libs: [
         "libui",
         "libutils",
+        "libsync",
     ],
     srcs: [
         "GraphicBufferMapper.cpp",
