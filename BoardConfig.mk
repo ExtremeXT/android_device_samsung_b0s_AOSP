@@ -16,9 +16,17 @@
 
 # Architecture
 TARGET_ARCH := arm64
-TARGET_ARCH_VARIANT := armv9-2a
+TARGET_ARCH_VARIANT := armv8-2a-dotprod
 TARGET_CPU_ABI := arm64-v8a
-TARGET_CPU_VARIANT := cortex-a76
+TARGET_CPU_ABI2 :=
+TARGET_CPU_VARIANT := generic
+
+## Architecture (Secondary)
+TARGET_2ND_ARCH := arm
+TARGET_2ND_ARCH_VARIANT := armv8-2a
+TARGET_2ND_CPU_ABI := armeabi-v7a
+TARGET_2ND_CPU_ABI2 := armeabi
+TARGET_2ND_CPU_VARIANT := generic
 
 # DTS
 BOARD_DTB_CFG := device/samsung/r0s/configs/kernel/dts/dtb.cfg
@@ -53,11 +61,12 @@ BOARD_BOOTCONFIG := androidboot.serialconsole=0
 BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_MKBOOTIMG_ARGS := --header_version $(BOARD_BOOT_HEADER_VERSION)
 BOARD_MKBOOTIMG_INIT_ARGS := $(BOARD_MKBOOTIMG_ARGS)
+TARGET_KERNEL_SOURCE := kernel/samsung/s5e9925
 TARGET_KERNEL_ADDITIONAL_FLAGS := \
     LLVM=1 \
     LLVM_IAS=1 \
     TARGET_SOC=s5e9925
-TARGET_KERNEL_CONFIG := s5e9925_r0sxxx_defconfig
+TARGET_KERNEL_CONFIG := s5e9925-r0sxxx_defconfig
 TARGET_KERNEL_NO_GCC := true
 
 # Modules
