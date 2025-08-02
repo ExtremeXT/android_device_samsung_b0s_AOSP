@@ -13,6 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+COMMON_PATH := device/samsung/r0s
 
 # Architecture
 TARGET_ARCH := arm64
@@ -110,7 +111,7 @@ BOARD_VENDOR_RAMDISK_FRAGMENT.dlkm.MKBOOTIMG_ARGS := --ramdisk_type DLKM
 
 # Recovery
 BOARD_RECOVERY_MKBOOTIMG_ARGS := --header_version 2 --cmdline ""
-TARGET_RECOVERY_FSTAB_GENRULE := gen_fstab_s5e9925_recovery
+TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/configs/init/recovery.fstab
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true

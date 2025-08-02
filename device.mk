@@ -13,6 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+COMMON_PATH := device/samsung/r0s
 
 # All components inherited here go to system image
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
@@ -123,9 +124,11 @@ PRODUCT_PACKAGES += \
     android.hardware.health-service.example_recovery
 
 # Init
-PRODUCT_PACKAGES += \
-    fstab.s5e9925_vendor \
-    fstab.s5e9925_vendor_ramdisk
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/configs/init/recovery.fstab:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/etc/recovery.fstab \
+    $(COMMON_PATH)/configs/init/fstab.s5e9925:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/fstab.s5e9925 \
+    $(COMMON_PATH)/configs/init/fstab.s5e9925:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.s5e9925 \
+    $(COMMON_PATH)/configs/init/init.debug.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.debug.rc
 
 # Input
 PRODUCT_PACKAGES += init.input.rc
