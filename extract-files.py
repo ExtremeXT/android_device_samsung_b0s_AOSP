@@ -24,47 +24,42 @@ namespace_imports = [
 
 
 blob_fixups: blob_fixups_user_type = {
-    'vendor/bin/hw/android.hardware.graphics.composer@2.4-service': blob_fixup()
-        .replace_needed(
-            'android.hardware.graphics.composer@2.1-resources.so',
-            'android.hardware.graphics.composer@2.1-resources_samsung.so')
-        .replace_needed(
-            'android.hardware.graphics.composer@2.2-resources.so',
-            'android.hardware.graphics.composer@2.2-resources_samsung.so'),
-    'vendor/etc/init/android.hardware.security.keymint-service.samsung.rc': blob_fixup()
-        .regex_replace('-service', '-service.samsung'),
     'vendor/etc/init/init.nfc.samsung.rc': blob_fixup()
         .regex_replace('system', 'secure_element'),
     'vendor/etc/init/init.s5e9925.rc': blob_fixup()
         .regex_replace('vendor_spay', 'system'),
-    'vendor/etc/init/vendor.samsung.hardware.camera.provider@4.0-service_64.rc': blob_fixup()
-        .regex_replace('vendor_secdir w', 'w')
-        .regex_replace('vendor_secdir', 'camera'),
     'vendor/etc/media_codecs_performance_c2.xml': blob_fixup()
         .regex_replace('.*sec\\.(.|\n)*D', '    </D'),
     'vendor/etc/vintf/manifest/sec_c2_manifest_default0_1_0.xml': blob_fixup()
         .regex_replace('.*t0.*\n', ''),
-    'vendor/lib64/android.hardware.graphics.composer@2.2-resources_samsung.so': blob_fixup()
-        .replace_needed(
-            'android.hardware.graphics.composer@2.1-resources.so',
-            'android.hardware.graphics.composer@2.1-resources_samsung.so'),
     (
-        'vendor/lib64/hw/audio.primary.s5e9925.so',
-        'vendor/lib64/libaudioproxy2.so',
-        'vendor/lib64/libaudioparamupdate.so',
+        'vendor/lib/hw/audio.primary.s5e9925.so',
+        'vendor/lib/libaudioproxy2.so',
+        'vendor/lib/libaudioparamupdate.so',
     ): blob_fixup()
         .replace_needed('libaudioroute.so', 'libaudioroute_samsung.so')
         .replace_needed('libtinyalsa.so', 'libtinyalsa_samsung.so'),
-    'vendor/lib64/hw/camera.s5e9925.so': blob_fixup()
-        .add_needed('libui_shim.so'),
-    'vendor/lib64/hw/vulkan.samsung.so': blob_fixup()
+    'vendor/lib64/hw/camera.s5e9925.so':blob_fixup()
+        .add_needed('libshim_ui.so'),
+    (
+        'vendor/lib/libexynoscamera3.so',
+        'vendor/lib64/libexynoscamera3.so',
+    ): blob_fixup()
+        .add_needed('libshim_camera.so'),
+    (
+        'vendor/lib/hw/vulkan.samsung.so',
+        'vendor/lib64/hw/vulkan.samsung.so',
+    ): blob_fixup()
         .clear_symbol_version('AHardwareBuffer_acquire')
         .clear_symbol_version('AHardwareBuffer_allocate')
         .clear_symbol_version('AHardwareBuffer_describe')
         .clear_symbol_version('AHardwareBuffer_getId')
         .clear_symbol_version('AHardwareBuffer_getNativeHandle')
         .clear_symbol_version('AHardwareBuffer_release'),
-    'vendor/lib64/libOpenCL.so': blob_fixup()
+    (
+        'vendor/lib/libOpenCL.so',
+        'vendor/lib64/libOpenCL.so',
+    ): blob_fixup()
         .clear_symbol_version('AHardwareBuffer_acquire')
         .clear_symbol_version('AHardwareBuffer_describe')
         .clear_symbol_version('AHardwareBuffer_getNativeHandle')
@@ -72,24 +67,47 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/lib64/lib_profiler.so': blob_fixup()
         .replace_needed('libprotobuf-cpp-full-21.7.so', 'libprotobuf-cpp-full-21.12.so'),
     (
-        'vendor/lib64/libalsautils_sec.so',
+        'vendor/lib/libalsautils_sec.so',
+        'vendor/lib/libaudioroute_samsung.so',
         'vendor/lib64/libaudioroute_samsung.so',
     ): blob_fixup()
         .replace_needed('libtinyalsa.so', 'libtinyalsa_samsung.so'),
-    'vendor/lib64/libexynosgraphicbuffer.so': blob_fixup()
-        .add_needed('libshim_ui.so'),
+    (
+        'vendor/lib/libexynosgraphicbuffer.so',
+        'vendor/lib64/libexynosgraphicbuffer.so',
+    ): blob_fixup()
+        .add_needed('libui_shim.so'),
     'vendor/lib64/libsec-ril.so': blob_fixup()
-        .replace_needed('libprotobuf-cpp-full-21.7.so', 'libprotobuf-cpp-full-21.12.so')
         .sig_replace(
             '0e 40 f9 e1 03 16 aa 82 0c 80 52 e3 03 15 aa',
             '0e 40 f9 e1 03 16 aa 82 0c 80 52 03 00 80 d2'),
     (
+        'vendor/lib/libsensorlistener.so',
+        'vendor/lib/libvdis_core.so',
         'vendor/lib64/libsensorlistener.so',
         'vendor/lib64/libvdis_core.so',
     ): blob_fixup()
         .add_needed('libshim_sensorndkbridge.so'),
-    'vendor/lib64/libskeymint_cli.so': blob_fixup()
+    'vendor/etc/init/android.hardware.security.keymint-service.samsung.rc': blob_fixup()
+        .regex_replace('android\\.hardware\\.security\\.keymint-service\n',
+            'android.hardware.security.keymint-service.samsung\n'),
+    (
+        'vendor/bin/hw/android.hardware.security.keymint-service.samsung',
+        'vendor/lib64/libskeymint10device.so',
+        'vendor/lib64/libskeymint_cli.so',
+    ): blob_fixup()
+        .replace_needed('android.hardware.security.keymint-V1-ndk_platform.so',
+            'android.hardware.security.keymint-V4-ndk.so')
+        .replace_needed('android.hardware.security.secureclock-V1-ndk_platform.so',
+            'android.hardware.security.secureclock-V1-ndk.so')
+        .replace_needed('android.hardware.security.sharedsecret-V1-ndk_platform.so',
+            'android.hardware.security.sharedsecret-V1-ndk.so')
+        .add_needed('android.hardware.security.rkp-V3-ndk.so')
         .add_needed('libshim_crypto.so'),
+    'vendor/lib64/vendor.samsung.hardware.keymint-V1-ndk_platform.so': blob_fixup()
+        .replace_needed('android.hardware.security.keymint-V1-ndk_platform.so',
+            'android.hardware.security.keymint-V4-ndk.so')
+        .add_needed('android.hardware.security.rkp-V3-ndk.so'),
 }  # fmt: skip
 
 
