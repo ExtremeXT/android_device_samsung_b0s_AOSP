@@ -1,6 +1,11 @@
 # Proprietary files
 
 # Audio - Main
+vendor/bin/hw/secaudiohalaidl
+vendor/etc/init/secaudiohalaidl.rc
+vendor/etc/vintf/manifest/secaudiohalaidl_manifest.xml
+vendor/lib64/hw/libsecaudiohal_aidl.so
+vendor/lib64/vendor.samsung.hardware.audio-V1-ndk_platform.so
 vendor/etc/LVACFS_Calibration.dat
 vendor/etc/LVACFS_Configuration.txt
 vendor/etc/LVACFS_ControlParams.txt

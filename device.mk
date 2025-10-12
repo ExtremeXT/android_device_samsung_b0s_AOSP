@@ -31,6 +31,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/window_extensions.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/handheld_vendor.mk)
 
+# Setup dalvik vm configs
+$(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
+
 # Inherit proprietary files
 $(call inherit-product, vendor/samsung/b0s/b0s-vendor.mk)
 

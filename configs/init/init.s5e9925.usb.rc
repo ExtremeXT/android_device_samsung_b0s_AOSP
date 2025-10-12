@@ -143,6 +143,7 @@ on early-boot
     setprop vendor.usb.functions.ready 1
 
 on boot
+    write /config/usb_gadget/g1/bcdDevice 0x0414
     # Use USB Gadget HAL
     setprop sys.usb.configfs 2
 

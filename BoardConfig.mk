@@ -129,7 +129,7 @@ BOARD_SEPOLICY_TEE_FLAVOR := teegris
 include device/samsung_slsi/sepolicy/sepolicy.mk
 
 # USB
-$(call soong_config_set,samsungUsbGadgetVars,gadget_name,17900000.dwc3)
+$(call soong_config_set,samsungUsbGadgetVars,gadget_name,10b00000.dwc3)
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
