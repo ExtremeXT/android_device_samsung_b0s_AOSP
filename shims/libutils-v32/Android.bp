@@ -1,5 +1,5 @@
 //
-// Copyright (C) The LineageOS Project
+// Copyright (C) 2023 The LineageOS Project
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,15 +14,11 @@
 // limitations under the License.
 
 cc_library_shared {
-    name: "libshim_crypto",
-    enabled: false,
-    target: {
-        android_arm64: {
-            enabled: true,
-        },
-    },
-    srcs: ["crypto.c"],
-    compile_multilib: "64",
-    shared_libs: ["libcrypto-tm"],
+    name: "libutils-v32",
+    srcs: ["Thread.cpp"],
+    shared_libs: [
+        "libutils",
+    ],
     vendor: true,
 }
+

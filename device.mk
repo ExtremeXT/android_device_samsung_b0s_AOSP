@@ -16,7 +16,7 @@
 COMMON_PATH := device/samsung/b0s
 
 # All components inherited here go to system image
-$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/generic_system.mk)
 
 # All components inherited here go to system_ext image
@@ -30,7 +30,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/window_extensions.mk)
 # All components inherited here go to vendor image
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/handheld_vendor.mk)
-$(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
 # Inherit proprietary files
 $(call inherit-product, vendor/samsung/b0s/b0s-vendor.mk)
@@ -131,7 +130,7 @@ PRODUCT_PACKAGES += vndservicemanager
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health-service.example \
-    android.hardware.health-service.example_recovery \
+    android.hardware.health-service.example_recovery
 
 # Init
 PRODUCT_COPY_FILES += \
@@ -142,6 +141,16 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += fstab.s5e9925
 PRODUCT_PACKAGES += ueventd.s5e9925.rc
+
+# VNDK
+PRODUCT_PACKAGES += libutils-v32
+
+# HIDL
+PRODUCT_PACKAGES += \
+   libhidltransport \
+   libhidltransport.vendor \
+   libhwbinder \
+   libhwbinder.vendor
 
 # Input
 PRODUCT_PACKAGES += init.input.rc

@@ -93,21 +93,47 @@ blob_fixups: blob_fixups_user_type = {
             'android.hardware.security.keymint-service.samsung\n'),
     (
         'vendor/bin/hw/android.hardware.security.keymint-service.samsung',
+        'vendor/lib64/lib_android_keymaster_skeymint_utils.so',
+        'vendor/lib64/libskeymint.so',
         'vendor/lib64/libskeymint10device.so',
         'vendor/lib64/libskeymint_cli.so',
     ): blob_fixup()
         .replace_needed('android.hardware.security.keymint-V1-ndk_platform.so',
-            'android.hardware.security.keymint-V4-ndk.so')
+            'android.hardware.security.keymint-V1-ndk.so')
         .replace_needed('android.hardware.security.secureclock-V1-ndk_platform.so',
             'android.hardware.security.secureclock-V1-ndk.so')
         .replace_needed('android.hardware.security.sharedsecret-V1-ndk_platform.so',
             'android.hardware.security.sharedsecret-V1-ndk.so')
         .add_needed('android.hardware.security.rkp-V3-ndk.so')
-        .add_needed('libshim_crypto.so'),
+        .replace_needed('libcrypto.so', 'libcrypto-tm.so')
+        .add_needed('libshim_crypto.so')
+        .replace_needed('libkeymint.so', 'libskeymint.so')
+        .replace_needed('lib_android_keymaster_keymint_utils.so',
+            'lib_android_keymaster_skeymint_utils.so')
+        .replace_needed('libkeymaster_portable.so',
+            'libkeymaster_portable.samsung.so'),
     'vendor/lib64/vendor.samsung.hardware.keymint-V1-ndk_platform.so': blob_fixup()
         .replace_needed('android.hardware.security.keymint-V1-ndk_platform.so',
-            'android.hardware.security.keymint-V4-ndk.so')
+            'android.hardware.security.keymint-V1-ndk.so')
         .add_needed('android.hardware.security.rkp-V3-ndk.so'),
+    (
+        'vendor/lib/libexynosdisplay.so',
+        'vendor/lib/hw/hwcomposer.s5e9925.so',
+        'vendor/lib/libExynosHWCService.so',
+        'vendor/lib/sensors.sensorhub.so',
+        'vendor/lib/libsensorlistener.so',
+        'vendor/lib/libeis_core.so',
+        'vendor/lib/libexynoscamera3.so',
+        'vendor/lib64/libexynosdisplay.so',
+        'vendor/lib64/hw/hwcomposer.s5e9925.so',
+        'vendor/lib64/libExynosHWCService.so',
+        'vendor/lib64/sensors.sensorhub.so',
+        'vendor/lib64/libsensorlistener.so',
+        'vendor/lib64/libeis_core.so',
+        'vendor/lib64/libexynoscamera3.so',
+    ): blob_fixup()
+        .add_needed('libutils-v32.so')
+        .binary_regex_replace(b'_ZN7android6Thread3runEPKcim', b'_ZN7utils326Thread3runEPKcim'),
 }  # fmt: skip
 
 
