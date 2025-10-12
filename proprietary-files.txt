@@ -20,6 +20,8 @@ vendor/lib/libaudioproxy2.so
 vendor/lib/hw/vendor.samsung_slsi.hardware.ExynosA2DPOffload@3.0-impl.so
 vendor/lib/vendor.samsung_slsi.hardware.ExynosA2DPOffload@3.0.so
 vendor/lib64/vendor.samsung_slsi.hardware.ExynosA2DPOffload@3.0.so
+vendor/lib/vendor.samsung.hardware.bluetooth.a2dp@1.0.so
+vendor/lib64/vendor.samsung.hardware.bluetooth.a2dp@1.0.so
 vendor/lib/libaboxpcmdump.so;DISABLE_CHECKELF
 vendor/lib/libdatamod.so
 vendor/lib/liblastaboxmsg.so
@@ -59,22 +61,14 @@ product/etc/permissions/privapp-permissions-google-product.xml
 product/priv-app/HotwordEnrollmentOKGoogleEx4CORTEXM55/HotwordEnrollmentOKGoogleEx4CORTEXM55.apk
 product/priv-app/HotwordEnrollmentXGoogleEx4CORTEXM55/HotwordEnrollmentXGoogleEx4CORTEXM55.apk
 
-# Bluetooth
-vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
-vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc
-vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
-vendor/lib64/vendor.samsung.hardware.bluetooth@2.0.so
-vendor/lib/vendor.samsung.hardware.bluetooth.a2dp@1.0.so
-vendor/lib64/vendor.samsung.hardware.bluetooth.a2dp@1.0.so
-
 # Camera - HAL
 vendor/lib64/hw/camera.s5e9925.so
 vendor/lib64/libMERTA.so
 vendor/lib64/libIMUSensor.so
 vendor/lib64/libeis_core.so
 vendor/lib64/libeis_interface.so
-vendor/lib64/libtriplecam_video_optical_zoom.so
 vendor/lib64/libtriplepreview_interface.so
+vendor/lib64/libmulticam_video_optical_zoom.so
 vendor/lib64/libuniapi.so
 vendor/lib64/libuniplugin.so
 vendor/lib64/libvdis_core.so
@@ -143,10 +137,21 @@ vendor/lib64/libenn_user_lib.so
 
 # Display - DQE
 vendor/etc/dqe/calib_data_colormode0.xml
-vendor/etc/dqe/calib_data_colormode0_s6e3fac_r0.xml
+vendor/etc/dqe/calib_data_colormode0_s6e3hae_b0.xml
 
 # Display - GPU firmware
 recovery/ramdisk/lib/firmware/sgpu/vangogh_lite_unified.bin:recovery/root/lib/firmware/sgpu/vangogh_lite_unified.bin
+
+# Misc FW
+recovery/ramdisk/vendor/firmware/wez02_b0_c3.bin:recovery/root/vendor/firmware/wez02_b0_c3.bin
+recovery/ramdisk/vendor/firmware/wez02_b0_c2.bin:recovery/root/vendor/firmware/wez02_b0_c2.bin
+recovery/ramdisk/vendor/firmware/wez02_b0_c1.bin:recovery/root/vendor/firmware/wez02_b0_c1.bin
+recovery/ramdisk/vendor/firmware/wez02_b0_c0.bin:recovery/root/vendor/firmware/wez02_b0_c0.bin
+recovery/ramdisk/vendor/firmware/w9020_b0.bin:recovery/root/vendor/firmware/w9020_b0.bin
+recovery/ramdisk/vendor/firmware/b0_vl53l5.bin:recovery/root/vendor/firmware/b0_vl53l5.bin
+recovery/ramdisk/vendor/firmware/b0_00_generic_xtalk_shape.bin:recovery/root/vendor/firmware/b0_00_generic_xtalk_shape.bin
+recovery/ramdisk/vendor/firmware/tsp_stm/fts2ba61y_b0.bin:recovery/root/vendor/firmware/tsp_stm/fts2ba61y_b0.bin
+recovery/ramdisk/vendor/firmware/tsp_stm/fts2ba61y_b0_fake.bin:recovery/root/vendor/firmware/tsp_stm/fts2ba61y_b0_fake.bin
 
 # Display - Gralloc
 vendor/bin/hw/android.hardware.graphics.allocator@4.0-service-sgr
@@ -184,7 +189,6 @@ vendor/firmware/APDV_AUDIO_SLSI.bin
 vendor/firmware/APSV_AUDIO_SLSI.bin
 vendor/firmware/AP_AUDIO_SLSI.bin
 vendor/firmware/Cal360.bin
-vendor/firmware/Data.msc
 vendor/firmware/OD_V3.4.3_08_31_QVGA_PAMIR_ENN_BGRA.nnc
 vendor/firmware/OD_V3.5.2_08_31_VGA_PAMIR_ENN_BGRA.nnc
 vendor/firmware/SoundBoosterParam.bin
@@ -193,8 +197,6 @@ vendor/firmware/abox_tplg.bin
 vendor/firmware/abox_tplg.conf
 vendor/firmware/avsyncmix.bin
 vendor/firmware/bidirmic.bin
-vendor/firmware/bt_nvm_loading.xml
-vendor/firmware/bt_nvm_loading_2nd.xml
 vendor/firmware/calliope_dram.bin
 vendor/firmware/calliope_sram.bin
 vendor/firmware/camera_tilt_calibration_info_1_2
@@ -234,13 +236,6 @@ vendor/firmware/dsp_gkt.xml
 vendor/firmware/dsp_ivp_dm.bin
 vendor/firmware/dsp_ivp_pm.bin
 vendor/firmware/dsp_reloc_rules.bin
-vendor/firmware/hpbtfw20.tlv
-vendor/firmware/hpbtfw21.tlv
-vendor/firmware/hpnv20.bin
-vendor/firmware/hpnv21.bab
-vendor/firmware/hpnv21g.bab
-vendor/firmware/htbtfw20.tlv
-vendor/firmware/htnv20.bin
 vendor/firmware/icc_profile.bin
 vendor/firmware/is_lib.bin
 vendor/firmware/is_mcu_fw.bin
@@ -259,17 +254,6 @@ vendor/firmware/listenbackeffect.bin
 vendor/firmware/mfc/mfc_fw_flash.bin
 vendor/firmware/mfc/mfc_fw_flash_s2miw04.bin
 vendor/firmware/mfc_fw.bin
-vendor/firmware/qca6490/amss20.bin
-vendor/firmware/qca6490/bdwlan.elf
-vendor/firmware/qca6490/bdwlan.elf1
-vendor/firmware/qca6490/bdwlan.elf10
-vendor/firmware/qca6490/bdwlan.elf2
-vendor/firmware/qca6490/bdwlang.elf
-vendor/firmware/qca6490/bdwlang.elf1
-vendor/firmware/qca6490/bdwlang.elf10
-vendor/firmware/qca6490/bdwlang.elf2
-vendor/firmware/qca6490/m3.bin
-vendor/firmware/qca6490/regdb.bin
 vendor/firmware/rxse.bin
 vendor/firmware/sb_ll.bin
 vendor/firmware/sb_music.bin
@@ -278,29 +262,17 @@ vendor/firmware/sectiongraph_tplg.bin
 vendor/firmware/sectiongraph_tplg.conf
 vendor/firmware/secure_configuration.flm.cfg.bin
 vendor/firmware/sensorhub/shub_pamir_rainbow.bin
-vendor/firmware/setfile_2la.bin
-vendor/firmware/setfile_3k1.bin
-vendor/firmware/setfile_gn3.bin
-vendor/firmware/setfile_imx374.bin
-vendor/firmware/setfile_imx563.bin
-vendor/firmware/swcnr_IMX374.json
-vendor/firmware/swcnr_S5K2LA.json
-vendor/firmware/swcnr_S5K3K1.json
-vendor/firmware/swcnr_S5KGN3.json
-vendor/firmware/tsp_stm/fts2ba61y_r0.bin
+vendor/firmware/tsp_stm/fts2ba61y_b0.bin
+vendor/firmware/tsp_stm/fts2ba61y_b0_fake.bin
 vendor/firmware/txse1.bin
 vendor/firmware/txse2.bin
 vendor/firmware/volumemonitor.bin
 vendor/firmware/vts.bin
 vendor/firmware/vts_evt0.bin
-vendor/firmware/wlan-connection-roaming-backup.ini
-vendor/firmware/wlan-connection-roaming.ini
-vendor/firmware/wlan/qcom_cfg.ini
 
 # Init
 recovery/ramdisk/init.recovery.s5e9925.rc:recovery/root/init.recovery.s5e9925.rc
 vendor/etc/init/init.s5e9925.rc
-vendor/ueventd.rc
 
 # Power
 vendor/lib64/libepic_helper.so
@@ -412,7 +384,7 @@ vendor/lib64/sensors.sensorhub.so
 # Wi-Fi
 vendor/bin/init.insmod.sh
 vendor/etc/init/wifi.rc
-vendor/etc/init/wifi_qcom_ap_exynos.rc
+vendor/etc/init/wifi_brcm.rc
 vendor/etc/wifi/p2p_supplicant_overlay.conf
 vendor/etc/wifi/wpa_supplicant_overlay.conf
 
@@ -440,18 +412,14 @@ vendor/lib/soundfx/libsamsungSoundbooster_plus.so
 vendor/lib/soundfx/libswdap.so
 vendor/lib/soundfx/libswspatializer.so
 
-# 32-bit Libraries - Bluetooth
-vendor/lib/hw/android.hardware.bluetooth@1.0-impl-qti.so
-vendor/lib/vendor.samsung.hardware.bluetooth@2.0.so
-
 # 32-bit Libraries - Camera
 vendor/lib/hw/camera.s5e9925.so
 vendor/lib/libMERTA.so
 vendor/lib/libIMUSensor.so
 vendor/lib/libeis_core.so
 vendor/lib/libeis_interface.so
-vendor/lib/libtriplecam_video_optical_zoom.so
 vendor/lib/libtriplepreview_interface.so
+vendor/lib/libmulticam_video_optical_zoom.so
 vendor/lib/libuniapi.so
 vendor/lib/libuniplugin.so
 vendor/lib/libvdis_core.so

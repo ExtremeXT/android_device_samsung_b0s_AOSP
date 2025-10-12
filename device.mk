@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-COMMON_PATH := device/samsung/r0s
+COMMON_PATH := device/samsung/b0s
 
 # All components inherited here go to system image
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
@@ -33,14 +33,14 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/handheld_vendor.mk)
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
 # Inherit proprietary files
-$(call inherit-product, vendor/samsung/r0s/r0s-vendor.mk)
+$(call inherit-product, vendor/samsung/b0s/b0s-vendor.mk)
 
 # Inherit some common Lineage stuff
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 
 # API Levels
-PRODUCT_SHIPPING_API_LEVEL := 34
+PRODUCT_SHIPPING_API_LEVEL := 31
 
 # Branding
 PRODUCT_BRAND := Android
@@ -106,7 +106,17 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.4-service
 
 PRODUCT_COPY_FILES += \
-    vendor/samsung/r0s/proprietary/recovery/root/lib/firmware/sgpu/vangogh_lite_unified.bin:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/lib/firmware/sgpu/vangogh_lite_unified.bin
+    vendor/samsung/b0s/proprietary/recovery/root/lib/firmware/sgpu/vangogh_lite_unified.bin:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/lib/firmware/sgpu/vangogh_lite_unified.bin \
+    vendor/samsung/b0s/proprietary/recovery/root/vendor/firmware/wez02_b0_c3.bin:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/vendor/firmware/wez02_b0_c3.bin \
+    vendor/samsung/b0s/proprietary/recovery/root/vendor/firmware/wez02_b0_c2.bin:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/vendor/firmware/wez02_b0_c2.bin \
+    vendor/samsung/b0s/proprietary/recovery/root/vendor/firmware/wez02_b0_c1.bin:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/vendor/firmware/wez02_b0_c1.bin \
+    vendor/samsung/b0s/proprietary/recovery/root/vendor/firmware/wez02_b0_c0.bin:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/vendor/firmware/wez02_b0_c0.bin \
+    vendor/samsung/b0s/proprietary/recovery/root/vendor/firmware/w9020_b0.bin:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/vendor/firmware/w9020_b0.bin \
+    vendor/samsung/b0s/proprietary/recovery/root/vendor/firmware/b0_vl53l5.bin:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/vendor/firmware/b0_vl53l5.bin \
+    vendor/samsung/b0s/proprietary/recovery/root/vendor/firmware/b0_00_generic_xtalk_shape.bin:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/vendor/firmware/b0_00_generic_xtalk_shape.bin \
+    vendor/samsung/b0s/proprietary/recovery/root/vendor/firmware/tsp_stm/fts2ba61y_b0.bin:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/vendor/firmware/tsp_stm/fts2ba61y_b0.bin \
+    vendor/samsung/b0s/proprietary/recovery/root/vendor/firmware/tsp_stm/fts2ba61y_b0_fake.bin:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/vendor/firmware/tsp_stm/fts2ba61y_b0_fake.bin \
+    
 
 PRODUCT_PACKAGES += \
     hdr_samsung_mx.key \
@@ -121,7 +131,7 @@ PRODUCT_PACKAGES += vndservicemanager
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health-service.example \
-    android.hardware.health-service.example_recovery
+    android.hardware.health-service.example_recovery \
 
 # Init
 PRODUCT_COPY_FILES += \
@@ -129,6 +139,9 @@ PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/init/fstab.s5e9925:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/fstab.s5e9925 \
     $(COMMON_PATH)/configs/init/fstab.s5e9925:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.s5e9925 \
     $(COMMON_PATH)/configs/init/init.debug.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.debug.rc
+
+PRODUCT_PACKAGES += fstab.s5e9925
+PRODUCT_PACKAGES += ueventd.s5e9925.rc
 
 # Input
 PRODUCT_PACKAGES += init.input.rc
@@ -144,6 +157,8 @@ PRODUCT_PACKAGES += \
     null \
     toolbox.vendor_ramdisk
 
+PRODUCT_OTA_ENFORCE_VINTF_KERNEL_REQUIREMENTS := false
+
 # Linker
 PRODUCT_PACKAGES += public.libraries.txt
 
@@ -157,16 +172,16 @@ PRODUCT_PACKAGES += \
 
 # Permissions
 PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.audio.pro.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.pro.prebuilt.xml \
-    frameworks/native/data/etc/android.hardware.keystore.app_attest_key.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.keystore.app_attest_key.prebuilt.xml \
-    frameworks/native/data/etc/android.hardware.nfc.ese.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.ese.prebuilt.xml \
-    frameworks/native/data/etc/android.hardware.nfc.hcef.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.hcef.prebuilt.xml \
-    frameworks/native/data/etc/android.hardware.nfc.uicc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.uicc.prebuilt.xml \
-    frameworks/native/data/etc/android.hardware.opengles.aep.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.opengles.aep.prebuilt.xml \
-    frameworks/native/data/etc/android.hardware.telephony.satellite.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.satellite.prebuilt.xml \
-    frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.prebuilt.xml \
-    frameworks/native/data/etc/android.software.midi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.midi.prebuilt.xml \
-    frameworks/native/data/etc/com.nxp.mifare.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.nxp.mifare.prebuilt.xml
+    frameworks/native/data/etc/android.hardware.audio.pro.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.pro.xml \
+    frameworks/native/data/etc/android.hardware.keystore.app_attest_key.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.keystore.app_attest_key.xml \
+    frameworks/native/data/etc/android.hardware.nfc.ese.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.ese.xml \
+    frameworks/native/data/etc/android.hardware.nfc.hcef.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.hcef.xml \
+    frameworks/native/data/etc/android.hardware.nfc.uicc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.uicc.xml \
+    frameworks/native/data/etc/android.hardware.opengles.aep.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.opengles.aep.xml \
+    frameworks/native/data/etc/android.hardware.telephony.satellite.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.satellite.xml \
+    frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml \
+    frameworks/native/data/etc/android.software.midi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.midi.xml \
+    frameworks/native/data/etc/com.nxp.mifare.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.nxp.mifare.xml
 
 PRODUCT_PACKAGES += \
     android.hardware.audio.low_latency.prebuilt.xml \
@@ -240,10 +255,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.vibrator-service.samsung
 
-# Wi-Fi
+# WiFi
 PRODUCT_PACKAGES += \
     android.hardware.wifi-service \
     hostapd \
-    libcld80211 \
     wpa_supplicant \
     wpa_supplicant.conf

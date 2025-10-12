@@ -1,4 +1,10 @@
 prebuilt_etc {
+    name: "fstab.s5e9925",
+    src: "fstab.s5e9925",
+    vendor: true,
+}
+
+prebuilt_etc {
     name: "init.input.rc",
     src: "init.input.rc",
     vendor: true,
@@ -10,4 +16,11 @@ prebuilt_etc {
     src: "init.s5e9925.usb.rc",
     vendor: true,
     relative_install_path: "init",
+}
+
+prebuilt_etc {
+    name: "ueventd.s5e9925.rc",
+    src: "ueventd.s5e9925.rc",
+    filename: "ueventd.rc",
+    vendor: true,
 }
