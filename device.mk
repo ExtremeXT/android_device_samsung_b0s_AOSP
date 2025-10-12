@@ -76,11 +76,11 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     SamsungDAP \
-    android.hardware.audio.effect@7.0-impl \
+    android.hardware.audio.effect@7.0-impl:32 \
     android.hardware.audio.service \
-    android.hardware.audio@7.1-impl \
+    android.hardware.audio@7.1-impl:32 \
     android.hardware.bluetooth.audio-impl \
-    android.hardware.soundtrigger@2.3-impl \
+    android.hardware.soundtrigger@2.3-impl:32 \
     audio.bluetooth.default \
     audio.r_submix.default \
     audio.usbv2.default \
@@ -249,10 +249,10 @@ PRODUCT_PACKAGES += \
     hals.conf
 
 # Thermal
-PRODUCT_PACKAGES += \
-    android.hardware.thermal-service.pixel \
-    thermal_info_config.json \
-    thermal_symlinks
+#PRODUCT_PACKAGES += \
+#    android.hardware.thermal-service.pixel \
+#    thermal_info_config.json \
+#    thermal_symlinks
 
 # USB
 PRODUCT_PACKAGES += \
