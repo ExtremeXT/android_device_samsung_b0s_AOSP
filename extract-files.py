@@ -42,11 +42,6 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/lib64/hw/camera.s5e9925.so':blob_fixup()
         .add_needed('libshim_ui.so'),
     (
-        'vendor/lib/libexynoscamera3.so',
-        'vendor/lib64/libexynoscamera3.so',
-    ): blob_fixup()
-        .add_needed('libshim_camera.so'),
-    (
         'vendor/lib/hw/vulkan.samsung.so',
         'vendor/lib64/hw/vulkan.samsung.so',
     ): blob_fixup()
@@ -81,13 +76,6 @@ blob_fixups: blob_fixups_user_type = {
         .sig_replace(
             '0e 40 f9 e1 03 16 aa 82 0c 80 52 e3 03 15 aa',
             '0e 40 f9 e1 03 16 aa 82 0c 80 52 03 00 80 d2'),
-    (
-        'vendor/lib/libsensorlistener.so',
-        'vendor/lib/libvdis_core.so',
-        'vendor/lib64/libsensorlistener.so',
-        'vendor/lib64/libvdis_core.so',
-    ): blob_fixup()
-        .add_needed('libshim_sensorndkbridge.so'),
     'vendor/etc/init/android.hardware.security.keymint-service.samsung.rc': blob_fixup()
         .regex_replace('android\\.hardware\\.security\\.keymint-service\n',
             'android.hardware.security.keymint-service.samsung\n'),
@@ -117,20 +105,32 @@ blob_fixups: blob_fixups_user_type = {
             'android.hardware.security.keymint-V1-ndk.so')
         .add_needed('android.hardware.security.rkp-V3-ndk.so'),
     (
+        'vendor/lib/libexynoscamera3.so',
+        'vendor/lib64/libexynoscamera3.so',
+    ): blob_fixup()
+        .add_needed('libshim_camera.so')
+        .add_needed('libutils-v32.so')
+        .binary_regex_replace(b'_ZN7android6Thread3runEPKcim', b'_ZN7utils326Thread3runEPKcim'),
+    (
+        'vendor/lib/libsensorlistener.so',
+        'vendor/lib/libvdis_core.so',
+        'vendor/lib64/libsensorlistener.so',
+        'vendor/lib64/libvdis_core.so',
+    ): blob_fixup()
+        .add_needed('libshim_sensorndkbridge.so')
+        .add_needed('libutils-v32.so')
+        .binary_regex_replace(b'_ZN7android6Thread3runEPKcim', b'_ZN7utils326Thread3runEPKcim'),
+    (
         'vendor/lib/libexynosdisplay.so',
         'vendor/lib/hw/hwcomposer.s5e9925.so',
         'vendor/lib/libExynosHWCService.so',
         'vendor/lib/sensors.sensorhub.so',
-        'vendor/lib/libsensorlistener.so',
         'vendor/lib/libeis_core.so',
-        'vendor/lib/libexynoscamera3.so',
         'vendor/lib64/libexynosdisplay.so',
         'vendor/lib64/hw/hwcomposer.s5e9925.so',
         'vendor/lib64/libExynosHWCService.so',
         'vendor/lib64/sensors.sensorhub.so',
-        'vendor/lib64/libsensorlistener.so',
         'vendor/lib64/libeis_core.so',
-        'vendor/lib64/libexynoscamera3.so',
     ): blob_fixup()
         .add_needed('libutils-v32.so')
         .binary_regex_replace(b'_ZN7android6Thread3runEPKcim', b'_ZN7utils326Thread3runEPKcim'),
