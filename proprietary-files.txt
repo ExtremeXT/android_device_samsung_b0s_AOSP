@@ -1,6 +1,6 @@
 # Proprietary files
 
-# Audio - Main
+# Audio - Misc/Config
 vendor/bin/hw/secaudiohalaidl
 vendor/etc/init/secaudiohalaidl.rc
 vendor/etc/vintf/manifest/secaudiohalaidl_manifest.xml
@@ -12,33 +12,27 @@ vendor/etc/LVACFS_ControlParams.txt
 vendor/etc/audio_board_info.xml
 vendor/etc/mixer_gains.xml
 vendor/etc/mixer_paths.xml
-vendor/lib/hw/audio.primary.s5e9925.so
-vendor/lib/libSamsungPostProcessConvertor.so
-vendor/lib/lib_SamsungRec_08020.so
-vendor/lib/lib_SoundAlive_SRC384_ver320.so
-vendor/lib/lib_lvacfs.so
-vendor/lib/lib_soundaliveresampler.so
-vendor/lib/libalsautils_sec.so
-vendor/lib/libaudio-ril.so
-vendor/lib/libaudioparamupdate.so
-vendor/lib/libaudioproxy2.so
-vendor/lib/hw/vendor.samsung_slsi.hardware.ExynosA2DPOffload@3.0-impl.so
-vendor/lib/vendor.samsung_slsi.hardware.ExynosA2DPOffload@3.0.so
-vendor/lib64/vendor.samsung_slsi.hardware.ExynosA2DPOffload@3.0.so
-vendor/lib/vendor.samsung.hardware.bluetooth.a2dp@1.0.so
-vendor/lib64/vendor.samsung.hardware.bluetooth.a2dp@1.0.so
-vendor/lib/libaboxpcmdump.so;DISABLE_CHECKELF
-vendor/lib/libdatamod.so
-vendor/lib/liblastaboxmsg.so
-vendor/lib/librecordalive.so
-#vendor/lib/libaudiofoundation.so:vendor/lib/libaudiofoundation_vendor.so;FIX_SONAME
-vendor/lib64/libsecaudioinfo.so
-vendor/lib64/libsehbluetooth_audio_session.so
 vendor/lib64/libspeakercalibration.so
-vendor/lib64/vendor.samsung.hardware.bluetooth.audio@2.0.so
-vendor/lib64/vendor.samsung.hardware.bluetooth.audio@2.1.so
 vendor/lib64/vndk/libaudioroute.so:vendor/lib64/libaudioroute_samsung.so;FIX_SONAME
 vendor/lib64/vndk/libtinyalsa.so:vendor/lib64/libtinyalsa_samsung.so;FIX_SONAME
+
+# Audio - S926NKSU9CYI5
+vendor/lib64/hw/audio.primary.s5e9945.so:vendor/lib64/hw/audio.primary.s5e9925.so;FIX_SONAME|f516eda767abb2bba045dc3c7548a7fd05df8dcf|b25cdadf265122c6ce25c1d1dc2f5e470e6a3db3
+vendor/lib64/libSamsungPostProcessConvertor.so|3ee12489fa01a88948931f1e826113578beb665f
+vendor/lib64/lib_SamsungRec_08020.so|f3143059edaa17a83d047508a8ff22a6fa770e92
+vendor/lib64/lib_SoundAlive_SRC384_ver320.so|26ef33d16f3a4f76891d8e5b4559f96ad0bb2791
+vendor/lib64/lib_lvacfs.so|0e68915914a09b13c9df6cecc278dac21594abb5
+vendor/lib64/lib_soundaliveresampler.so|4901a8bd47e6412b4216aed2c6befcde94db898a
+vendor/lib64/libaudio-ril.so|c83fecb39ee2cd9863e0bb0858cbf5fb1a0e2a72
+vendor/lib64/libalsautils_sec.so|07af257007195b52d91c5afbd6d2a4cdd24476a7|6697efbe4bd35167443eb1c721cc2ed7457181b2
+vendor/lib64/libaudioparamupdate.so|d952df756990973294fd7aa8feaa8f92938d9994|6a279e6042aa98de0c68287728d6f70fb3260df0
+vendor/lib64/libaudioproxy2.so|7e1185b44c8d3b325ec90b7c5187c6609a0f76f9|3bae6694d2fa33c8104a23881521c8dfa8abba5e
+vendor/lib64/liblastaboxmsg.so|61d3b67edb40b0381ff0b0c1f70f1c41ac132c12
+vendor/lib64/librecordalive.so|e82822bb849c8e0a3aea0511809d67a90ccac32c
+vendor/lib64/libsecaudioinfo.so|9dc105d7703e1621e18f6cced790036d973b70b4
+vendor/lib64/libsecaudiolevel.so|0d8d1092bb2a0f6c7fd438f076faa8ebce48a256
+vendor/lib64/libsehbluetooth_audio_session_aidl.so|04b9aaf88593fa16e6fc6883dc49d67e0af3b71f
+vendor/lib64/vendor.samsung.hardware.bluetooth.audio-V2-ndk.so|282a0c011b454545ca8883f9bcdf1903559d0cd4
 
 # Audio - Effects
 vendor/etc/SoundBoosterParam.txt
@@ -418,30 +412,6 @@ vendor/etc/init/wifi_brcm.rc
 vendor/etc/wifi/p2p_supplicant_overlay.conf
 vendor/etc/wifi/wpa_supplicant_overlay.conf
 
-# 32-bit Libraries - Audio
-vendor/lib/libsecaudioinfo.so
-vendor/lib/libsehbluetooth_audio_session.so
-vendor/lib/libspeakercalibration.so
-vendor/lib/vendor.samsung.hardware.bluetooth.audio@2.0.so
-vendor/lib/vendor.samsung.hardware.bluetooth.audio@2.1.so
-vendor/lib/vndk/libaudioroute.so:vendor/lib/libaudioroute_samsung.so;FIX_SONAME
-vendor/lib/vndk/libtinyalsa.so:vendor/lib/libtinyalsa_samsung.so;FIX_SONAME
-
-# 32-bit Libraries - Audio Effects
-vendor/lib/lib_SoundAlive_3DPosition_ver202.so
-vendor/lib/lib_SoundAlive_AlbumArt_ver105.so
-vendor/lib/lib_SoundAlive_play_plus_ver800.so
-vendor/lib/lib_SoundBooster_ver1100.so
-vendor/lib/libprofileparamstorage.so
-vendor/lib/libsecaudiocoreutils.so
-vendor/lib/libspatializerparamstorage.so
-vendor/lib/soundfx/libaudioeffectoffload.so
-vendor/lib/soundfx/libaudiosaplus_sec.so
-vendor/lib/soundfx/libmyspace.so
-vendor/lib/soundfx/libsamsungSoundbooster_plus.so
-vendor/lib/soundfx/libswdap.so
-vendor/lib/soundfx/libswspatializer.so
-
 # 32-bit Libraries - Camera
 vendor/lib/hw/camera.s5e9925.so
 vendor/lib/libMERTA.so
@@ -550,8 +520,6 @@ vendor/lib/hw/sound_trigger.primary.s5e9925.so
 #vendor/lib/libsecfr_engine.so
 #vendor/lib/libsecfr_model.so
 #
-## Additional 32-bit Libraries - Audio Processing
-#vendor/lib/soundfx/libaudiopreprocessing.so
 
 ## VNDK - from prebuilts/vndk/v33 - android-15.0.0_r20
 vendor/lib64/libcrypto-tm.so;FIX_SONAME|7291c0e41fa86b3739df0c0c20de21e88f43661a|f53b9d897921ade77c511eb98955db374fcc5c69

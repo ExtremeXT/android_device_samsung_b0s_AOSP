@@ -33,9 +33,9 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/etc/vintf/manifest/sec_c2_manifest_default0_1_0.xml': blob_fixup()
         .regex_replace('.*t0.*\n', ''),
     (
-        'vendor/lib/hw/audio.primary.s5e9925.so',
-        'vendor/lib/libaudioproxy2.so',
-        'vendor/lib/libaudioparamupdate.so',
+        'vendor/lib64/hw/audio.primary.s5e9925.so',
+        'vendor/lib64/libaudioproxy2.so',
+        'vendor/lib64/libaudioparamupdate.so',
     ): blob_fixup()
         .replace_needed('libaudioroute.so', 'libaudioroute_samsung.so')
         .replace_needed('libtinyalsa.so', 'libtinyalsa_samsung.so'),
@@ -62,8 +62,7 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/lib64/lib_profiler.so': blob_fixup()
         .replace_needed('libprotobuf-cpp-full-21.7.so', 'libprotobuf-cpp-full-21.12.so'),
     (
-        'vendor/lib/libalsautils_sec.so',
-        'vendor/lib/libaudioroute_samsung.so',
+        'vendor/lib64/libalsautils_sec.so',
         'vendor/lib64/libaudioroute_samsung.so',
     ): blob_fixup()
         .replace_needed('libtinyalsa.so', 'libtinyalsa_samsung.so'),

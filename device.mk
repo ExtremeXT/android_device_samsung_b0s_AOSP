@@ -82,11 +82,11 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     SamsungDAP \
-    android.hardware.audio.effect@7.0-impl:32 \
-    android.hardware.audio@7.0-impl:32 \
+    android.hardware.audio.effect@7.0-impl \
+    android.hardware.audio@7.1-impl \
     android.hardware.audio.service \
     android.hardware.bluetooth.audio-impl \
-    android.hardware.soundtrigger@2.3-impl:32 \
+    android.hardware.soundtrigger@2.3-impl \
     audio.bluetooth.default \
     audio.r_submix.default \
     audio.usbv2.default \
@@ -94,6 +94,8 @@ PRODUCT_PACKAGES += \
     audio_policy_configuration.xml
 
 TARGET_EXCLUDES_AUDIOFX := true
+
+$(call soong_config_set, android_hardware_audio, run_64bit, true)
 
 # Camera
 PRODUCT_PACKAGES += \
