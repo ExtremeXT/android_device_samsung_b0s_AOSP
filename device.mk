@@ -98,20 +98,48 @@ TARGET_EXCLUDES_AUDIOFX := true
 
 $(call soong_config_set, android_hardware_audio, run_64bit, true)
 
+PRODUCT_SOONG_NAMESPACES += hardware/samsung_slsi-linaro/codec2
+PRODUCT_SOONG_NAMESPACES += hardware/samsung_slsi-linaro/exynos
+PRODUCT_SOONG_NAMESPACES += hardware/samsung_slsi-linaro/graphics
+PRODUCT_SOONG_NAMESPACES += hardware/samsung_slsi-linaro/sgpu
+
+# Codec2
+PRODUCT_PACKAGES += \
+    samsung.hardware.media.c2@1.2-service \
+    libExynosC2H264Dec \
+    libExynosC2H264Enc \
+    libExynosC2HevcDec \
+    libExynosC2HevcEnc \
+    libExynosC2Vp8Dec \
+    libExynosC2Vp8Enc \
+    libExynosC2Vp9Dec \
+    libExynosC2Vp9Enc \
+    libExynosC2Av1Dec
+
+PRODUCT_PACKAGES += \
+    codec2.vendor.base.policy \
+    codec2.vendor.ext.policy
+
+# Graphics
+PRODUCT_PACKAGES += \
+    libdrm_sgpu \
+    libion_exynos \
+    android.hardware.composer.hwc3-service.slsi \
+    android.hardware.graphics.allocator@4.0-service-sgr \
+    android.hardware.graphics.mapper@4.0-impl-sgr
+
 # Camera
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider-service.samsung \
     libhypervintf \
-    libsensorndkbridge
+    libsensorndkbridge \
+    libepicoperator
 
 # DRM
 PRODUCT_PACKAGES += com.android.hardware.drm.clearkey
 
 # Display
 $(call inherit-product, $(SRC_TARGET_DIR)/product/angle_default.mk)
-
-PRODUCT_PACKAGES += \
-    android.hardware.graphics.composer@2.4-service
 
 PRODUCT_COPY_FILES += \
     vendor/samsung/b0s/proprietary/recovery/root/lib/firmware/sgpu/vangogh_lite_unified.bin:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/lib/firmware/sgpu/vangogh_lite_unified.bin \
@@ -294,3 +322,7 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-impl:64 \
     android.hardware.bluetooth@1.0-service \
     libbt-vendor:64
+
+# Call Samsung LSI board support package makefiles
+$(call inherit-product, hardware/samsung_slsi-linaro/graphics/base/hwcomposer_property.mk)
+$(call inherit-product, hardware/samsung_slsi-linaro/config/config.mk)
