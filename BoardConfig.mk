@@ -37,7 +37,7 @@ BOARD_INCLUDE_RECOVERY_DTBO := true
 BOARD_KERNEL_SEPARATED_DTBO := true
 
 # Display
-TARGET_SCREEN_DENSITY := 418
+TARGET_SCREEN_DENSITY := 600
 TARGET_USES_VULKAN := true
 
 # Filesystem
@@ -103,6 +103,8 @@ BOARD_SAMSUNG_DYNAMIC_PARTITIONS_PARTITION_LIST := \
     odm
 
 BOARD_SAMSUNG_DYNAMIC_PARTITIONS_SIZE := $(shell echo $$(( $(BOARD_SUPER_PARTITION_SIZE) - 4 * 1024**2 )))
+
+$(call soong_config_set,cbd,protocol,sipc)
 
 # Properties
 TARGET_PRODUCT_PROP += device/samsung/b0s/configs/props/product.prop

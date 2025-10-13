@@ -58,12 +58,16 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/non_ab_device.mk)
 AB_OTA_UPDATER := false
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
+TARGET_SCREEN_HEIGHT := 3088
+TARGET_SCREEN_WIDTH := 1440
+
 # Soong Namespaces
 PRODUCT_SOONG_NAMESPACES += \
     bootable/deprecated-ota \
     hardware/google/interfaces \
     hardware/google/pixel \
     hardware/qcom-caf/wlan \
+    hardware/samsung_slsi-linaro/exynos/cpboot_v3 \
     hardware/samsung
 
 # AVF
@@ -125,6 +129,9 @@ PRODUCT_PACKAGES += \
 
 # Fastbootd
 PRODUCT_PACKAGES += fastbootd
+
+# Fingerprint
+PRODUCT_PACKAGES += android.hardware.biometrics.fingerprint-service.samsung
 
 # General
 PRODUCT_PACKAGES += vndservicemanager
@@ -201,6 +208,7 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.flash-autofocus.prebuilt.xml \
     android.hardware.camera.full.prebuilt.xml \
     android.hardware.camera.raw.prebuilt.xml \
+    android.hardware.fingerprint.prebuilt.xml \
     android.hardware.hardware_keystore_V3.xml \
     android.hardware.nfc.hce.prebuilt.xml \
     android.hardware.nfc.prebuilt.xml \
@@ -235,7 +243,9 @@ PRODUCT_PACKAGES += \
 # RIL
 PRODUCT_PACKAGES += \
     secril_config_svc \
+    cbd \
     sehradiomanager \
+    sehradiomanager.conf \
     android.hardware.radio@1.2.vendor:64 \
     android.hardware.radio.config-V1-ndk.vendor:64 \
     android.hardware.radio.data-V1-ndk.vendor:64 \
@@ -251,10 +261,10 @@ PRODUCT_PACKAGES += \
     hals.conf
 
 # Thermal
-#PRODUCT_PACKAGES += \
-#    android.hardware.thermal-service.pixel \
-#    thermal_info_config.json \
-#    thermal_symlinks
+PRODUCT_PACKAGES += \
+    android.hardware.thermal-service.pixel \
+    thermal_info_config.json \
+    thermal_symlinks
 
 # USB
 PRODUCT_PACKAGES += \
@@ -271,4 +281,5 @@ PRODUCT_PACKAGES += \
     android.hardware.wifi-service \
     hostapd \
     wpa_supplicant \
-    wpa_supplicant.conf
+    wpa_supplicant.conf \
+    WifiOverlay

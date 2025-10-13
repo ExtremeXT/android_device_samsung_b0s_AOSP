@@ -1,0 +1,6 @@
+prebuilt_etc {
+    name: "sehradiomanager.conf",
+    src: "sehradiomanager.conf",
+    vendor: true,
+}
+
