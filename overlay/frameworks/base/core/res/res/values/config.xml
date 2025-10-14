@@ -57,4 +57,7 @@
          config_defaultRefreshRate may be set to 0, in which case the value set for
          config_defaultPeakRefreshRate will act as the default frame rate. -->
     <integer name="config_defaultRefreshRate">0</integer>
+
+     <dimen name="physical_power_button_center_screen_location_y">1240px</dimen>
+     <string name="config_mainBuiltInDisplayCutout">M 0,0 H -10 V 26.66666666666667 H 10 V 0 H 0 Z @dp</string>
 </resources>
