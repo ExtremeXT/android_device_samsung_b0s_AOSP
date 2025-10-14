@@ -23,3 +23,6 @@ vendor.powerhal.disp.idle_support=false
 
 # WiFi
 wifi.direct.interface=p2p-dev-wlan0
+
+ro.vendor.epdg.support=true
+vendor.sec.rild.libpath=/vendor/lib64/libsec-ril.so

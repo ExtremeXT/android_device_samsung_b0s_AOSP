@@ -168,7 +168,6 @@ vendor/lib64/libdisplaycolor_default.so
 vendor/lib64/vendor.samsung.libcolor.hardware.so
 
 # Display - HWC
-vendor/lib/hw/hwcomposer.s5e9925.so
 vendor/lib64/hw/hwcomposer.s5e9925.so
 vendor/lib64/libExynosHWCService.so
 
@@ -298,32 +297,31 @@ vendor/etc/libnfc-nxp.conf
 vendor/firmware/nfc/libsn220u_fw.so:vendor/lib64/libsn220u_fw.so
 
 ## RIL
-vendor/bin/hw/rild|249bd469620af395bcca58153d40cee6c28bdcb5
-vendor/etc/init/vendor.samsung.rilchip.slsi.rc|95aa52333814b340e5064eae3a9bd5cb8a96a3ff
-vendor/etc/vintf/manifest/vendor.samsung.hardware.radio.exclude.slsi.xml|c3f8ea3f6228f2d572081b0c0ae29a251de4350b
-vendor/etc/vintf/manifest/vendor.samsung.hardware.radio_manifest_2_33.xml|e9cdde9d05c5cce32f76bbb164437f43b3288157
-vendor/etc/vintf/manifest/vendor.samsung.hardware.sehradio_manifest_2_33.xml|ebbe359a9b2d78cb88debe79d9183c039afb7c01
-vendor/lib/libsecril-client.so|fd7cb317ad17fd6c5b94c69bc4eaef80631215f1
-vendor/lib/libsemnativecarrierfeature.so|56ed7bd5f596502cf9614b5d9ebf255ac4e1e73c
-vendor/lib64/libSemDataProps.so|023991c586ba36f42f06b7f9286cf417bcb8a9f8
-vendor/lib64/libSemTelephonyProps.so|cbde8c62e9126875501d26681873b81e75dcd8a0
-vendor/lib64/libril_sem.so|9bcd6054a5ebded9ba92f27ef00ab537ab1c09b9
-vendor/lib64/libsec-ril.so|f66b4199957f40d0e023141e86606696a740872f|f66b4199957f40d0e023141e86606696a740872f
-vendor/lib64/libsecril-client.so|bae84e05d1c19dc5b41bfe2326dbf2744b1e412c
-vendor/lib64/libsemnativecarrierfeature.so|b69b820d8881d4e7bba426212e4aba31095bb437
-vendor/lib64/vendor.samsung.hardware.radio-V1-ndk.so|738bc9ac0ca800b36e8b08652240ee01ddba6e47
-vendor/lib64/vendor.samsung.hardware.radio.bridge-V1-ndk.so|6faa7fbeab4b7d335d434729ec22493fde30028c
-vendor/lib64/vendor.samsung.hardware.radio.channel-V1-ndk.so|fc3522bd787fa48ab80f53c0836cbb0c5ddf1b10
-vendor/lib64/vendor.samsung.hardware.radio.data-V1-ndk.so|8645b1d3d2e944a38ec07ee8c69d9f7d817b3730
-vendor/lib64/vendor.samsung.hardware.radio.messaging-V1-ndk.so|9b3b09c9bc2911b801d0de0caea13476a90f8776
-vendor/lib64/vendor.samsung.hardware.radio.sim-V1-ndk.so|611a9f8ca1a46b33471643e200e70ce28f963b75
+vendor/bin/hw/rild
+vendor/etc/init/vendor.samsung.rilchip.slsi.rc
+vendor/etc/init/init.vendor.rilcommon.rc
+vendor/etc/init/vendor.samsung.rild.rc
+vendor/etc/init/init.baseband.rc
+vendor/etc/vintf/manifest/vendor.samsung.hardware.radio.exclude.slsi.xml
+vendor/etc/vintf/manifest/vendor.samsung.hardware.radio_manifest_2_31.xml
+vendor/etc/vintf/manifest/vendor.samsung.hardware.sehradio_manifest_2_31.xml
+vendor/lib64/libVendorSemTelephonyProps.so
+vendor/lib64/libVendorSemDataProps.so
+vendor/lib64/libril_sem.so
+vendor/lib64/libsec-ril.so
+vendor/lib64/libsecril-client.so
+vendor/lib64/libsemnativecarrierfeature.so
+vendor/lib64/vendor.samsung.hardware.radio.bridge@2.0.so
+vendor/lib64/vendor.samsung.hardware.radio.bridge@2.1.so
+vendor/lib64/vendor.samsung.hardware.radio.channel@2.0.so
 
 # RIL Dependencies
+vendor/bin/cass
+vendor/etc/init/cass.rc
+vendor/etc/mtu-conf.xml
 vendor/lib64/libengmode_client.so
-vendor/lib64/libvkmanager_vendor.so
 
 # Security - Gatekeeper
-vendor/lib/hw/gatekeeper.s5e9925.so
 vendor/lib64/hw/gatekeeper.s5e9925.so
 
 # Security - Hermes
@@ -359,6 +357,13 @@ vendor/bin/tzts_daemon
 vendor/etc/init/teegris_v4.rc
 vendor/lib64/libteecl.so
 vendor/lib64/libuuid.so;MODULE_SUFFIX=_vendor
+
+# Security - Vaultkeeper
+vendor/bin/vaultkeeperd
+vendor/etc/init/vaultkeeper_common.rc
+vendor/lib64/libstork_shared.so
+vendor/lib64/libvkmanager_vendor.so
+vendor/lib64/libvkservice.so
 
 # Security - TEEGRIS Firmware
 vendor/tee/00000000-0000-0000-0000-000000010081
@@ -412,114 +417,10 @@ vendor/etc/init/wifi_brcm.rc
 vendor/etc/wifi/p2p_supplicant_overlay.conf
 vendor/etc/wifi/wpa_supplicant_overlay.conf
 
-# 32-bit Libraries - Camera
-vendor/lib/hw/camera.s5e9925.so
-vendor/lib/libMERTA.so
-vendor/lib/libIMUSensor.so
-vendor/lib/libeis_core.so
-vendor/lib/libeis_interface.so
-vendor/lib/libtriplepreview_interface.so
-vendor/lib/libmulticam_video_optical_zoom.so
-vendor/lib/libuniapi.so
-vendor/lib/libuniplugin.so
-vendor/lib/libvdis_core.so
-vendor/lib/libvdis_interface.so
-
-# 32-bit Libraries - Camera Dependencies
-vendor/lib/libcsc.so
-vendor/lib/libexynosscaler.so
-vendor/lib/libgiantmscl.so
-vendor/lib/libhwjpeg.so
-vendor/lib/libhwjsqz.so
-vendor/lib/libmpbase.so
-vendor/lib/libsensorlistener.so
-vendor/lib/libvpl.so
-vendor/lib/vendor.samsung.hardware.thermal@1.0.so
-
-# 32-bit Libraries - Camera Provider
-vendor/lib/libenn_profiler.so
-vendor/lib/vendor.samsung_slsi.hardware.enn@1.0.so
-vendor/lib/libexynoscamera3.so
-vendor/lib/libexynoscamera_plugin.so
-vendor/lib/libexynoscamera_plugin_utils.so
-
-# 32-bit Libraries - Codec2
-vendor/lib/libExynosC2Av1Dec.so
-vendor/lib/libExynosC2ComponentStore.so
-vendor/lib/libExynosC2H264Dec.so
-vendor/lib/libExynosC2H264Enc.so
-vendor/lib/libExynosC2HevcDec.so
-vendor/lib/libExynosC2HevcEnc.so
-vendor/lib/libExynosC2Vp8Dec.so
-vendor/lib/libExynosC2Vp8Enc.so
-vendor/lib/libExynosC2Vp9Dec.so
-vendor/lib/libExynosC2Vp9Enc.so
-
-# 32-bit Libraries - Codec2 Dependencies
-vendor/lib/libexynosgdc.so
-vendor/lib/libexynosutils.so
-vendor/lib/libexynosv4l2.so
-
-# 32-bit Libraries - Compute Graphics
-vendor/lib/hw/vulkan.samsung.so
-vendor/lib/libSGPUOpenCL.so:vendor/lib/libOpenCL.so;FIX_SONAME;TRYSRCFIRST
-
-# 32-bit Libraries - Neural Networks
-vendor/lib/libenn_common_utils.so
-vendor/lib/libenn_engine_lib.so
-vendor/lib/libenn_model.so
-vendor/lib/libenn_public_api_cpp_lib.so
-vendor/lib/libenn_user_driver_cpu.so
-vendor/lib/libenn_user_driver_gpu_lib.so
-vendor/lib/libenn_user_driver_unified.so
-vendor/lib/libenn_user_lib.so
-
-# 32-bit Libraries - Display
-vendor/lib/libeis_utils.so
-vendor/lib/libion_exynos.so
-vendor/lib/libdrm_sgpu.so
-vendor/lib/hw/android.hardware.graphics.mapper@4.0-impl-sgr.so
-vendor/lib/libsbwchelper.so
-vendor/lib/libdisplaycolor_default.so
-vendor/lib/vendor.samsung.libcolor.hardware.so
-vendor/lib/libExynosHWCService.so
-vendor/lib/libacryl.so
-vendor/lib/libdrmresource.so
-vendor/lib/libexynosdisplay.so
-vendor/lib/vendor.samsung.libcolor.hdr10plus.so
-vendor/lib/libexynosgraphicbuffer.so;DISABLE_CHECKELF
-vendor/lib/libexynosgraphicbuffer_core.so
-
-# 32-bit Libraries - Power
-vendor/lib/libepic_helper.so
-vendor/lib/libepicoperator.so
-vendor/lib/vendor.samsung_slsi.hardware.epic@1.0.so
-
-# 32-bit Libraries - Miscellaneous
-vendor/lib/libfloatingfeature.so
-vendor/lib/libsecnativefeature.so
-
-# 32-bit Libraries - Security
-vendor/lib/libteecl.so
-vendor/lib/libuuid.so;MODULE_SUFFIX=_vendor
-
-# 32-bit Libraries - Sensors
-vendor/lib/sensors.sensorhub.so
-
-# 32-bit Libraries - Hotword
-vendor/lib/hw/sound_trigger.primary.s5e9925.so
-
-## Additional 32-bit Libraries - Camera Plugins
-#vendor/lib/libexynoscamera_cnr_plugin.so
-#vendor/lib/libexynoscamera_fakefusion_plugin.so
-#vendor/lib/libexynoscamera_fakefusion.so
-#vendor/lib/libexynoscamera_merta_plugin.so
-#vendor/lib/libexynoscamera_vpl_plugin.so
-#
-## Additional 32-bit Libraries - Security Features
-#vendor/lib/libsecfr_engine.so
-#vendor/lib/libsecfr_model.so
-#
-
 ## VNDK - from prebuilts/vndk/v33 - android-15.0.0_r20
 vendor/lib64/libcrypto-tm.so;FIX_SONAME|7291c0e41fa86b3739df0c0c20de21e88f43661a|f53b9d897921ade77c511eb98955db374fcc5c69
+
+# Wi-Fi
+vendor/etc/wifi/indoorchannel.info
+vendor/firmware/nvram.txt
+vendor/firmware/nvram.txt_ES10

@@ -16,7 +16,7 @@
 COMMON_PATH := device/samsung/b0s
 
 # All components inherited here go to system image
-$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/generic_system.mk)
 
 # All components inherited here go to system_ext image
@@ -248,14 +248,12 @@ PRODUCT_PACKAGES += \
     cbd \
     sehradiomanager \
     sehradiomanager.conf \
-    android.hardware.radio@1.2.vendor:64 \
-    android.hardware.radio.config-V1-ndk.vendor:64 \
-    android.hardware.radio.data-V1-ndk.vendor:64 \
-    android.hardware.radio.messaging-V1-ndk.vendor:64 \
-    android.hardware.radio.modem-V1-ndk.vendor:64 \
-    android.hardware.radio.network-V1-ndk.vendor:64 \
-    android.hardware.radio.sim-V1-ndk.vendor:64 \
-    android.hardware.radio.voice-V1-ndk.vendor:64
+    android.hardware.radio@1.4.vendor:64 \
+    android.hardware.radio.config@1.2.vendor:64 \
+    android.hardware.radio.deprecated@1.0.vendor:64
+
+PRODUCT_PACKAGES += \
+    libdsms_vendor:64
 
 # Sensors
 PRODUCT_PACKAGES += \
