@@ -283,3 +283,13 @@ PRODUCT_PACKAGES += \
     wpa_supplicant \
     wpa_supplicant.conf \
     WifiOverlay
+
+# BT
+$(call soong_config_set,brcm_libbt,custom_bt_config,//$(COMMON_PATH):vnd_s5e9925.txt)
+
+PRODUCT_SOONG_NAMESPACES += hardware/broadcom/libbt
+
+PRODUCT_PACKAGES += \
+    android.hardware.bluetooth@1.0-impl:64 \
+    android.hardware.bluetooth@1.0-service \
+    libbt-vendor:64
