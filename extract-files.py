@@ -133,6 +133,8 @@ blob_fixups: blob_fixups_user_type = {
     ): blob_fixup()
         .add_needed('libutils-v32.so')
         .binary_regex_replace(b'_ZN7android6Thread3runEPKcim', b'_ZN7utils326Thread3runEPKcim'),
+    ('vendor/bin/vaultkeeperd', 'vendor/lib64/libvkservice.so'): blob_fixup()
+        .binary_regex_replace(b'ro.factory.factory_binary', b'ro.vendor.factory_binary\x00'),
 }  # fmt: skip
 
 
