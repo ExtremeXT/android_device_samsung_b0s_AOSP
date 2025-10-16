@@ -1,4 +1,0 @@
-filegroup {
-    name: "vnd_s5e9925.txt",
-    srcs: ["libbt_vndcfg.txt"],
-}
