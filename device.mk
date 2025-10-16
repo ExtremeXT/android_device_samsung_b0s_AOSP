@@ -101,7 +101,6 @@ PRODUCT_SOONG_NAMESPACES += hardware/samsung_slsi-linaro/codec2
 PRODUCT_SOONG_NAMESPACES += hardware/samsung_slsi-linaro/exynos
 PRODUCT_SOONG_NAMESPACES += hardware/samsung_slsi-linaro/graphics
 PRODUCT_SOONG_NAMESPACES += hardware/samsung_slsi-linaro/sgpu
-PRODUCT_SOONG_NAMESPACES += hardware/samsung_slsi-linaro/exynos/gralloc/gralloc4
 
 # Codec2
 PRODUCT_PACKAGES += \

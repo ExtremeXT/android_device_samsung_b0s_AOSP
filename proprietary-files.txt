@@ -94,7 +94,6 @@ vendor/lib64/libexynoscamera_plugin_utils.so
 vendor/etc/media_codecs_c2.xml
 vendor/etc/media_codecs_performance_c2.xml
 vendor/etc/media_profiles_V1_0.xml
-vendor/etc/vintf/manifest/sec_c2_manifest_default0_1_0.xml
 
 # Compute - Graphics
 vendor/lib64/hw/vulkan.samsung.so
@@ -132,7 +131,7 @@ recovery/ramdisk/vendor/firmware/tsp_stm/fts2ba61y_b0.bin:recovery/root/vendor/f
 recovery/ramdisk/vendor/firmware/tsp_stm/fts2ba61y_b0_fake.bin:recovery/root/vendor/firmware/tsp_stm/fts2ba61y_b0_fake.bin
 
 # Display - Graphics
-#vendor/lib64/libdrm_sgpu.so
+vendor/lib64/libdrm_sgpu.so
 
 # Display - HWC Dependencies
 vendor/lib64/vendor.samsung.libcolor.hdr10plus.so
