@@ -128,9 +128,6 @@ recovery/ramdisk/vendor/firmware/b0_00_generic_xtalk_shape.bin:recovery/root/ven
 recovery/ramdisk/vendor/firmware/tsp_stm/fts2ba61y_b0.bin:recovery/root/vendor/firmware/tsp_stm/fts2ba61y_b0.bin
 recovery/ramdisk/vendor/firmware/tsp_stm/fts2ba61y_b0_fake.bin:recovery/root/vendor/firmware/tsp_stm/fts2ba61y_b0_fake.bin
 
-# Display - Graphics
-vendor/lib64/libdrm_sgpu.so
-
 # Display - HWC Dependencies
 vendor/lib64/vendor.samsung.libcolor.hdr10plus.so
 vendor/lib64/vendor.samsung.libcolor.hardware.so
@@ -239,10 +236,8 @@ vendor/firmware/vts_evt0.bin
 recovery/ramdisk/init.recovery.s5e9925.rc:recovery/root/init.recovery.s5e9925.rc
 vendor/etc/init/init.s5e9925.rc
 
-# Power
+# EPIC
 vendor/lib64/libepic_helper.so
-vendor/lib64/libepicoperator.so
-vendor/lib64/vendor.samsung_slsi.hardware.epic@1.0.so
 
 # Miscellaneous Dependencies
 vendor/lib64/libfloatingfeature.so

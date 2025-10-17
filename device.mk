@@ -104,7 +104,6 @@ PRODUCT_SOONG_NAMESPACES += hardware/samsung_slsi-linaro/sgpu
 
 # Codec2
 PRODUCT_PACKAGES += \
-    libExynosGDCWrapper \
     samsung.hardware.media.c2@1.2-service \
     libExynosC2H264Dec \
     libExynosC2H264Enc \
@@ -122,6 +121,8 @@ PRODUCT_PACKAGES += \
 
 # Graphics
 PRODUCT_PACKAGES += \
+    libdrm_sgpu \
+    libion_exynos \
     android.hardware.composer.hwc3-service.slsi \
     android.hardware.graphics.allocator@4.0-service-sgr \
     android.hardware.graphics.mapper@4.0-impl-sgr
@@ -130,16 +131,14 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider-service.samsung \
     libhypervintf \
-    libsensorndkbridge
+    libsensorndkbridge \
+    libepicoperator
 
 # DRM
 PRODUCT_PACKAGES += com.android.hardware.drm.clearkey
 
 # Display
 $(call inherit-product, $(SRC_TARGET_DIR)/product/angle_default.mk)
-
-PRODUCT_PACKAGES += \
-    android.hardware.graphics.composer@2.4-service
 
 PRODUCT_COPY_FILES += \
     vendor/samsung/b0s/proprietary/recovery/root/lib/firmware/sgpu/vangogh_lite_unified.bin:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/lib/firmware/sgpu/vangogh_lite_unified.bin \
@@ -315,4 +314,4 @@ PRODUCT_PACKAGES += \
 
 # Call Samsung LSI board support package makefiles
 $(call inherit-product, hardware/samsung_slsi-linaro/graphics/base/hwcomposer_property.mk)
-#$(call inherit-product, hardware/samsung_slsi-linaro/config/config.mk)
+ $(call inherit-product, hardware/samsung_slsi-linaro/config/config.mk)
