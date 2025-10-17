@@ -156,4 +156,8 @@ WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
 WPA_SUPPLICANT_VERSION                        := VER_0_8_X
 $(call soong_config_set,wpa_supplicant_8,board_wlan_bcmdhd_sae,true)
 
+# Bluetooth
+BOARD_CUSTOM_BT_CONFIG := device/samsung/b0s/bluetooth/libbt_vndcfg.txt
+BOARD_HAVE_BLUETOOTH_BCM := true
+
 include hardware/samsung_slsi-linaro/config/BoardConfig9925.mk
