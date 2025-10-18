@@ -324,4 +324,4 @@ PRODUCT_PACKAGES += \
 
 # Call Samsung LSI board support package makefiles
 $(call inherit-product, hardware/samsung_slsi-linaro/graphics/base/hwcomposer_property.mk)
- $(call inherit-product, hardware/samsung_slsi-linaro/config/config.mk)
+$(call inherit-product, hardware/samsung_slsi-linaro/config/config.mk)
