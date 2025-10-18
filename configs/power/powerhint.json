@@ -1,19 +1,93 @@
 {
     "Nodes": [
         {
-            "Name": "Placeholder",
-            "Path": "/dev/null",
+            "Name": "CPUMinFreq",
+            "Path": "/sys/devices/system/cpu/cpufreq_limit/cpufreq_min_limit",
             "Values": [
+                "-1",
+                "1152000",
+                "2515000"
+            ],
+            "DefaultIndex": 0,
+            "ResetOnInit": true
+        },
+        {
+            "Name": "MIFMinFreq",
+            "Path": "/sys/devices/platform/17000010.devfreq_mif/devfreq/17000010.devfreq_mif/scaling_devfreq_min",
+            "Values" : [
+                "0",
+                "1352000"
+            ],
+            "DefaultIndex": 0,
+            "ResetOnInit": true
+        },
+        {
+            "Name": "TABoost",
+            "Path": "/sys/kernel/ems/taskgroup/top-app/uclamp_min",
+            "Values": [
+                "0",
+                "100"
+            ],
+            "DefaultIndex": 0,
+            "ResetOnInit": true
+        },
+        {
+            "Name": "KernelAppStartNotify",
+            "Path": "/sys/kernel/mm/vmscan/am_app_launch",
+            "Values": [
+                "0",
+                "1"
+            ],
+            "DefaultIndex": 0,
+            "ResetOnInit": true
+        },
+        {
+            "Name": "GPUIfpoRuntimeControl",
+            "Path": "/sys/kernel/gpu/gpu_ifpo_runtime_control",
+            "Values": [
+                "1",
                 "0"
-            ]
+            ],
+            "DefaultIndex": 0,
+            "ResetOnInit": true
         }
     ],
     "Actions": [
         {
-            "PowerHint": "PLACEHOLDER",
-            "Node": "Placeholder",
-            "Duration": 0,
+            "PowerHint": "LAUNCH",
+            "Node": "CPUMinFreq",
+            "Duration": 1000,
+            "Value": "2515000"
+        },
+        {
+            "PowerHint": "LAUNCH",
+            "Node": "TABoost",
+            "Duration": 1000,
+            "Value": "100"
+        },
+        {
+            "PowerHint": "LAUNCH",
+            "Node": "KernelAppStartNotify",
+            "Duration": 1000,
+            "Value": "1"
+        },
+        {
+            "PowerHint": "LAUNCH",
+            "Node": "GPUIfpoRuntimeControl",
+            "Duration": 1000,
             "Value": "0"
+        },
+        {
+            "PowerHint": "INTERACTION",
+            "Node": "CPUMinFreq",
+            "Duration": 250,
+            "Value": "1152000"
+        },
+        {
+            "PowerHint": "INTERACTION",
+            "Node": "MIFMinFreq",
+            "Duration": 250,
+            "Value": "1352000"
         }
     ]
 }
