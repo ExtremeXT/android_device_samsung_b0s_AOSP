@@ -70,13 +70,6 @@
         </interface>
     </hal>
     <hal format="aidl">
-        <name>android.hardware.security.keymint</name>
-        <interface>
-            <name>IRemotelyProvisionedComponent</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="aidl">
         <name>android.hardware.security.secureclock</name>
         <interface>
             <name>ISecureClock</name>
@@ -107,15 +100,6 @@
         </interface>
         <interface>
             <name>ISehKeyMintFactory</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.samsung.hardware.security.proca</name>
-        <transport>hwbinder</transport>
-        <version>2.0</version>
-        <interface>
-            <name>ISehProca</name>
             <instance>default</instance>
         </interface>
     </hal>
