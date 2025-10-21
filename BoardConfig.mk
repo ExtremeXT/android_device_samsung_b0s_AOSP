@@ -159,3 +159,5 @@ $(call soong_config_set,wpa_supplicant_8,board_wlan_bcmdhd_sae,true)
 # Bluetooth
 BOARD_CUSTOM_BT_CONFIG := device/samsung/b0s/bluetooth/libbt_vndcfg.txt
 BOARD_HAVE_BLUETOOTH_BCM := true
+
+-include vendor/samsung/b0s/BoardConfigVendor.mk
