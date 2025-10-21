@@ -19,6 +19,7 @@ from extract_utils.main import (
 
 namespace_imports = [
     'device/samsung/b0s',
+    'vendor/samsung/b0s',
     'hardware/samsung',
     'hardware/samsung_slsi-linaro/codec2',
     'hardware/samsung_slsi-linaro/exynos',

@@ -1,3 +1,9 @@
+soong_namespace {
+	imports: [
+        "vendor/samsung/b0s"
+	],
+}
+
 install_symlink {
     name: "etc_root_symlink",
     recovery: true,

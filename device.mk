@@ -40,6 +40,7 @@ $(call inherit-product, vendor/samsung/b0s/b0s-vendor.mk)
 # Inherit some common Lineage stuff
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
+PRODUCT_SOONG_NAMESPACES += $(COMMON_PATH)
 
 # API Levels
 PRODUCT_SHIPPING_API_LEVEL := 31
