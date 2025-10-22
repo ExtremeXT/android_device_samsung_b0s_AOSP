@@ -43,7 +43,6 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/lib64/hw/camera.s5e9925.so':blob_fixup()
         .add_needed('libshim_ui.so'),
     (
-        'vendor/lib/hw/vulkan.samsung.so',
         'vendor/lib64/hw/vulkan.samsung.so',
     ): blob_fixup()
         .clear_symbol_version('AHardwareBuffer_acquire')
@@ -53,7 +52,6 @@ blob_fixups: blob_fixups_user_type = {
         .clear_symbol_version('AHardwareBuffer_getNativeHandle')
         .clear_symbol_version('AHardwareBuffer_release'),
     (
-        'vendor/lib/libOpenCL.so',
         'vendor/lib64/libOpenCL.so',
     ): blob_fixup()
         .clear_symbol_version('AHardwareBuffer_acquire')
@@ -68,7 +66,6 @@ blob_fixups: blob_fixups_user_type = {
     ): blob_fixup()
         .replace_needed('libtinyalsa.so', 'libtinyalsa_samsung.so'),
     (
-        'vendor/lib/libexynosgraphicbuffer.so',
         'vendor/lib64/libexynosgraphicbuffer.so',
     ): blob_fixup()
         .add_needed('libui_shim.so'),
@@ -105,15 +102,15 @@ blob_fixups: blob_fixups_user_type = {
             'android.hardware.security.keymint-V1-ndk.so')
         .add_needed('android.hardware.security.rkp-V3-ndk.so'),
     (
-        'vendor/lib/libexynoscamera3.so',
         'vendor/lib64/libexynoscamera3.so',
     ): blob_fixup()
+        .sig_replace('88 02 00 36 21 0F 00 D0', '1F 20 03 D5 21 0F 00 D0')
+        .sig_replace('16 00 00 94 0B 00 00 14', '1F 20 03 D5 0B 00 00 14')
+        .sig_replace('92 FF FF 97 0B 00 00 14', '1F 20 03 D5 0B 00 00 14')
         .add_needed('libshim_camera.so')
         .add_needed('libutils-v32.so')
         .binary_regex_replace(b'_ZN7android6Thread3runEPKcim', b'_ZN7utils326Thread3runEPKcim'),
     (
-        'vendor/lib/libsensorlistener.so',
-        'vendor/lib/libvdis_core.so',
         'vendor/lib64/libsensorlistener.so',
         'vendor/lib64/libvdis_core.so',
     ): blob_fixup()
@@ -121,11 +118,6 @@ blob_fixups: blob_fixups_user_type = {
         .add_needed('libutils-v32.so')
         .binary_regex_replace(b'_ZN7android6Thread3runEPKcim', b'_ZN7utils326Thread3runEPKcim'),
     (
-        'vendor/lib/libexynosdisplay.so',
-        'vendor/lib/hw/hwcomposer.s5e9925.so',
-        'vendor/lib/libExynosHWCService.so',
-        'vendor/lib/sensors.sensorhub.so',
-        'vendor/lib/libeis_core.so',
         'vendor/lib64/libexynosdisplay.so',
         'vendor/lib64/hw/hwcomposer.s5e9925.so',
         'vendor/lib64/libExynosHWCService.so',
