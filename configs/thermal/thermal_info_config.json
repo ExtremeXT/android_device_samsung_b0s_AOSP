@@ -96,10 +96,6 @@
             "Type": "COMPONENT"
         },
         {
-            "Name": "thermal-dev-1",
-            "Type": "COMPONENT"
-        },
-        {
             "Name": "thermal-gpufreq-0",
             "Type": "GPU"
         }
