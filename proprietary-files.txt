@@ -84,6 +84,7 @@ vendor/lib64/libhwjsqz.so
 vendor/lib64/libmpbase.so
 vendor/lib64/libsemseg.so
 vendor/lib64/libsensorlistener.so
+vendor/lib64/libswcnr.so
 vendor/lib64/libvpl.so
 vendor/lib64/vendor.samsung.hardware.thermal@1.0.so
 
@@ -93,6 +94,12 @@ vendor/lib64/vendor.samsung_slsi.hardware.enn@1.0.so
 vendor/lib64/libexynoscamera3.so
 vendor/lib64/libexynoscamera_plugin.so
 vendor/lib64/libexynoscamera_plugin_utils.so
+vendor/lib64/libexynoscamera_fakefusion_plugin.so
+vendor/lib64/libexynoscamera_cnr_plugin.so
+vendor/lib64/libexynoscamera_vpl_plugin.so
+vendor/lib64/libexynoscamera_merta_plugin.so
+vendor/lib64/libexynoscamera_fakefusion.so
+vendor/lib64/libexynoscamera_ssl_plugin.so
 
 # Codec2
 vendor/bin/hw/samsung.hardware.media.c2@1.0-service
