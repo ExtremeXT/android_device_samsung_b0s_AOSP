@@ -162,13 +162,47 @@
     </array>
     <item name="cpu.suspend">8.4</item>
     <item name="cpu.idle">28.3</item>
+    <item name="battery.capacity">5000</item>
     <item name="wifi.controller.idle">1</item>
     <item name="wifi.controller.rx">90</item>
     <item name="wifi.controller.tx">410</item>
     <item name="wifi.controller.voltage">3600</item>
+    <array name="wifi.batchedscan">
+        <value>.0002</value>
+        <value>.002</value>
+        <value>.02</value>
+        <value>.2</value>
+        <value>2</value>
+    </array>
     <item name="bluetooth.controller.idle">2</item>
     <item name="bluetooth.controller.rx">16</item>
     <item name="bluetooth.controller.tx">30</item>
     <item name="bluetooth.controller.voltage">3850</item>
+    <array name="gpu.active">
+        <value>162</value>
+        <value>227</value>
+        <value>305</value>
+        <value>388</value>
+        <value>463</value>
+        <value>650</value>
+        <value>808</value>
+        <value>1013</value>
+        <value>1234</value>
+        <value>1296</value>
+        <value>1368</value>
+    </array>
+    <array name="gpu.speeds">
+        <value>303000</value>
+        <value>404000</value>
+        <value>500000</value>
+        <value>605000</value>
+        <value>711000</value>
+        <value>807000</value>
+        <value>903000</value>
+        <value>999000</value>
+        <value>1095000</value>
+        <value>1210000</value>
+        <value>1306000</value>
+    </array>
 </device>
 
